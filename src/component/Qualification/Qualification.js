@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './Qualification.css';
 
 class Qualification extends Component {
 
     render() {
         return (
-            <div>
+            <div className="border-box">
                 <div>
                     <p>Degree:</p>
                     <div>
@@ -50,8 +51,8 @@ class Qualification extends Component {
                 </div>
 
                 <div>
-                    <label>Year of Passing:</label>
-                    <div>
+                    <label>Year of Passing:</label><nobr/>
+                    <div className="in-line">
                         <select id="docTimeYear">
                             <option value="" selected>Month</option>
                             <option value="Jan">Jan</option>

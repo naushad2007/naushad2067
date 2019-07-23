@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './WorkPreference.css';
 
 class WorkPreference extends Component {
 
     render() {
         return (
-            <div className='solid-border'>
+            <div className='border-box'>
                 <h4>Work Preference</h4>
                 <hr className='hr-solid'/>
                 <div>

@@ -1,0 +1,9 @@
+.info-box {
+    border: 5px solid skyblue;
+    font-size: 14px;
+    border-radius: 0.4rem 0.4rem;
+    margin: 0 auto;
+    padding: 5px 4%;
+    text-align: left;
+    width: 93%;
+}

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './Class12.css';
 
 class Class12 extends Component {
 
     render() {
         return (
-            <div>
+            <div className="border-box">
                 <div>
                     <label>Class XII</label><br/>
                     <div>

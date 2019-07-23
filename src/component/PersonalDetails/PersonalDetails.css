@@ -1,12 +1,13 @@
-* {
-    margin: 0;
-    padding: 0;
-    border: 0;
+
+.hr-solid {
+    border: 0.07rem solid lightseagreen;
 }
 
-.personal-details {
-    border: 1px solid lightblue;
-    padding: 1%;
-    margin: 0 auto;
-    width: 88% auto;
+.rb-container {
+    font-size: 18px;
 }
+
+.in-line {
+    display: inline;
+}
+

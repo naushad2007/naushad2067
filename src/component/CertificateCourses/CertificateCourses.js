@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './CertificateCourses.css';
 
 class CertificateCourses extends Component {
 
     render() {
         return (
-            <div className='solid-border'>
+            <div className='certi border-box'>
                 <div>
                     <label>Certificate and Courses:</label>
                     <select id="certi_course" onchange="certificateandCoursesChange()">

@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './LoginDetails.css';
 
 class LoginDetails extends Component {
 
     render() {
         return (
-            <div>
+            <div className="login-details border-box">
                 <h4>Login Details</h4>
                 <hr className="hr-solid"></hr>
                 <div>

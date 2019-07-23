@@ -1,4 +1,4 @@
-import './component/ComponentCSS.css'
+import './App.css'
 import React, { Component } from 'react';
 import Header from './component/Header/Header';
 import Footer from './component/Footer/Footer';
@@ -18,11 +18,10 @@ class App extends Component {
   render() {
     return(
       <div className="page">
-        <div className="header">
           <Header/>
-        </div>
         <div className="body">
-          <div className="form">
+          <div className="left-sec">
+            <InformationBox/>
             <LoginDetails/>
             <HighestDegree/>
             <Qualification/>
@@ -32,13 +31,17 @@ class App extends Component {
             <PersonalDetails/>
             <MailerSettings/>
           </div>
-          <div className="info-box">
-            <InformationBox/>
+          
+          <div className="right-sec">
+              <div>
+                {/* <selectTemplate/> */}
+              </div>
+              <div>
+                {/* <Template/> */}
+              </div>
           </div>
         </div>
-        <div className="footer">
-          <Footer/>
-        </div>
+        <Footer/>
       </div>
     );
   }

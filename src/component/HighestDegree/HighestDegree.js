@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './HighestDegree.css';
 
 class HighestDegree extends Component {
 
     render() {
         return (
-            <div>
+            <div className="border-box">
                 <h4>Education:</h4>
                 <hr class="hr-solid"></hr>
                 <label>Highest Degree:</label>

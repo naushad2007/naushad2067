@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import './MailerSettings.css';
 
 class MailerSettings extends Component {
 
     render() {
         return (
-            <div>
+            <div className="border-box">
                 <h4>Mailer Setting</h4>
                 <hr className='hr-solid'/>
                 <p className='mailer-paragraph'>Firstnaukri.com will send newsletters and tips from time to time. Please choose the mailers that you wish to receive.</p>
