@@ -1,0 +1,39 @@
+.footer-links {
+    text-align: center;
+    margin: 2% 0; 
+    font-size: 15px;
+}
+
+.logo {
+    display: block;
+    margin: 1% 12% auto;
+}
+
+.yellow-box {
+    display: block;
+    background-color: blueviolet;
+    font-size: 1.4rem;
+    text-align: center;
+    border-radius: 0.4rem 0.4rem;
+    color: #ffffff;
+    box-shadow: 0 0.3rem rgba(146, 142, 142, 0.712);
+    padding: 0.3rem;
+    margin: 1% 12% auto;
+}
+.already-member {
+    display: block;
+    font-size: 1.2rem;
+    text-align: end;
+    margin: 1% 12% auto;
+}
+
+.info-box {
+    border: 5px solid skyblue;
+    font-size: 14px;
+    display: inline-block;
+    border-radius: 0.4rem 0.4rem;
+}
+
+.generic-margin {
+    margin: 1% 12% auto;
+}

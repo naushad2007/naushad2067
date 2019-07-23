@@ -1,0 +1,12 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.personal-details {
+    border: 1px solid lightblue;
+    padding: 1%;
+    margin: 0 auto;
+    width: 88% auto;
+}
