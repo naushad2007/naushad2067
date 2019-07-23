@@ -11,7 +11,7 @@ class Qualification extends Component {
                     <div>
                         <form>
                             <label>
-                            <input type="radio" checked="checked" id="docFullTime" value="Full Time"/>Full Time
+                            <input type="radio" id="docFullTime" value="Full Time"/>Full Time
                             </label>
                             <label>
                             <input type="radio" id="docPartTime" value="Part Time"/>Part Time
@@ -32,7 +32,7 @@ class Qualification extends Component {
                 <div>
                     <label>Courses:</label>
                     <select id='docType' className="doc_type">  
-                        <option value="" selected>Select Course</option>
+                        <option value="" >Select Course</option>
                         <option value="Ph.D/Doctorate">Ph.D/Doctorate</option>
                         <option value="MPHIL">MPHIL</option>
                         <option value="Other">Other</option>
@@ -46,7 +46,7 @@ class Qualification extends Component {
                         <option value='Medicine' name=''>Medicine</option>
                         <option value='Machanical' name=''>Machanical</option>
                         <option value='Information Technology' name=''>Information Technology</option>
-                        //TODO: Add specilaziation from js
+                        {/*TODO: Add specilaziation from js*/}
                     </select>
                 </div>
 
@@ -54,7 +54,7 @@ class Qualification extends Component {
                     <label>Year of Passing:</label><nobr/>
                     <div className="in-line">
                         <select id="docTimeYear">
-                            <option value="" selected>Month</option>
+                            <option value="" >Month</option>
                             <option value="Jan">Jan</option>
                             <option value="Feb">Feb</option>
                             <option value="Mar">Mar</option>
@@ -70,7 +70,7 @@ class Qualification extends Component {
                         </select>
 
                         <select id="docTimeMonth">
-                            <option value="" selected>Year</option>
+                            <option value="" >Year</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
                             <option value="2020">2020</option>
@@ -85,7 +85,7 @@ class Qualification extends Component {
                 <div>
                     <label>Grading System:</label>
                     <select id="docGradeScheme" className="grading_scheme_doc">
-                        <option value="" selected>Select</option>
+                        <option value="" >Select</option>
                         <option value="Scale 10 Grading System">Scale 10 Grading System</option>
                         <option value="Scale 4 Grading System">Scale 4 Grading System</option>
                         <option value="%Marks of 100 Maximum">%Marks of 100 Maximum</option>
@@ -94,14 +94,14 @@ class Qualification extends Component {
                 </div>
 
                 <div>
-                    <label for='doctorate-marks'>Marks/Grade:</label>
-                    <input  id="docMarks" type='number' classNmae='doctorate-marks' step='0.0001'/>
+                    <label>Marks/Grade:</label>
+                    <input  id="docMarks" type='number' className='doctorate-marks' step='0.0001'/>
                 </div>
 
                 <div>
-                    <label for="achievement_doc">Academic Achievements:</label>
-                    <select id="ach_doc" className="achievement_doc" onchange="academicAchievementinDoctorateChange()">
-                        <option value="" selected>Select</option>
+                    <label>Academic Achievements:</label>
+                    <select id="ach_doc" className="achievement_doc">
+                        <option value="" >Select</option>
                         <option value="College Topper">College Topper</option>
                         <option value="Department Topper">Department Topper</option>
                         <option value="School Topper">School Topper</option>

@@ -11,6 +11,7 @@ import PersonalDetails from './component/PersonalDetails/PersonalDetails';
 import Qualification from './component/Qualification/Qualification';
 import WorkPreference from './component/WorkPreference/WorkPreference';
 import InformationBox from './component/InformationBox/InformationBox';
+import Button from './component/Button/Button';
 class App extends Component {
   componentDidMount() {
   }
@@ -30,16 +31,17 @@ class App extends Component {
             <WorkPreference/>
             <PersonalDetails/>
             <MailerSettings/>
+            <Button/>
           </div>
-          
-          <div className="right-sec">
+
+          {/* <div className="right-sec">
               <div>
-                {/* <selectTemplate/> */}
+                <selectTemplate/>
               </div>
               <div>
-                {/* <Template/> */}
+                <Template/>
               </div>
-          </div>
+          </div> */}
         </div>
         <Footer/>
       </div>
