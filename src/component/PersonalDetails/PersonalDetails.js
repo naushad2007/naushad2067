@@ -85,10 +85,9 @@ class PersonalDetails extends Component {
                     </div>
                 </div>
                 <div>
-                    <label>Current Location:</label>
-                    {/*<select onChange={print_city('cl_state', this.selectedIndex)} id="cl_sts" name ="cl_stt" className="form-control" required onChange="currentStateChange()"><option value="">Selected</option></select>
-                    <select id ="cl_state" className="form-control" required onChange="currentCityChange()"><option value="">Selected</option></select>
-                    { print_state("cl_sts") */}
+                    {/*<select onChange={print_city('state', this.selectedIndex)} id="sts" name ="stt" class="form-control" required></select>
+                    <select id ="state" class="form-control" required></select>
+        print_state("sts")*/}
                 </div>
                 <div>
                     <label>Hometown:</label>

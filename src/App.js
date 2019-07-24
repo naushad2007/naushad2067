@@ -25,7 +25,9 @@ class App extends Component {
             <InformationBox/>
             <LoginDetails/>
             <HighestDegree/>
-            <Qualification/>
+            <Qualification id="Doctorate"/>
+            <Qualification id="Post_Graduation"/>
+            <Qualification id="Graduation"/>
             <Class12/>
             <CertificateCourse/>
             <WorkPreference/>
