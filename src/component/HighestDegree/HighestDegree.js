@@ -1,16 +1,20 @@
 import React, { Component } from 'react';
 import './HighestDegree.css';
+import EducationComponent from './../Qualification/EducationComponents/EducationComponents';
 
 class HighestDegree extends Component {
 
     state = {
-        highestDegree: ''
+        highestDegree: '1'
     }
 
     highestDegreeHandler(event) {
         console.log(event.target.value);
         this.setState({highestDegree:event.target.value})
     }
+    
+    //<EducationComponent />
+
 
     render() {
         return (

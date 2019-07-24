@@ -1,0 +1,236 @@
+@page {
+    margin: 0;
+    padding: 0
+}
+
+@media print {
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        max-width: 100%
+    }
+}
+
+.cv-preview {
+    width: 100%;
+    max-width: 1080px;
+    margin: 0 auto;
+    font-family: Arial,sans-serif
+}
+
+.cv-preview ul {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+
+.cv-preview h1 {
+    margin: 0;
+    padding: 0;
+    color: #fff
+}
+
+.cv-preview header {
+    margin: 0;
+    text-align: left
+}
+
+.cv-preview .nobreak {
+    page-break-inside: avoid
+}
+
+.cv-preview .dwnldLink {
+    display: inline-block;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+    border-radius: 20px;
+    padding-top: 0;
+    width: 136px;
+    line-height: 37px;
+    text-align: center;
+    vertical-align: middle;
+    position: fixed;
+    top: 50px;
+    background-color: #f6f6f6;
+    right: 20%
+}
+
+@media print {
+    .cv-preview header {
+        background-color: #0d6784!important;
+        -webkit-print-color-adjust: exact;
+        margin: 0
+    }
+}
+
+.cv-preview header {
+    background-color: #0d6784;
+    padding: 20px 0 40px 6%
+}
+
+.cv-preview header h1 {
+    font-size: 30px;
+    font-weight: 400
+}
+
+.cv-preview header ul {
+    padding-top: 9px
+}
+
+.cv-preview header ul li {
+    display: inline-block
+}
+
+.cv-preview header ul li .call,.cv-preview header ul li .post {
+    font-family: font_cv_preview;
+    font-size: 27px;
+    color: #fff;
+    margin-right: 5px;
+    padding: 0;
+    border: 1px solid #fff;
+    border-radius: 40px
+}
+
+.cv-preview header ul li .post {
+    width: 21px
+}
+
+.cv-preview header ul li span {
+    font-size: 16px;
+    padding: 0 45px 0 0;
+    vertical-align: middle;
+    color: #fff
+}
+
+.cv-preview header ul li .emptycell {
+    padding-right: 38px
+}
+
+.cv-preview .container {
+    padding: 13px 14% 0 6%
+}
+
+.cv-preview .container span.key {
+    width: 130px
+}
+
+.cv-preview .container span {
+    display: inline-block;
+    font-size: 14px;
+    color: #000;
+    width: 65%;
+    vertical-align: top
+}
+
+.cv-preview .container h2 {
+    font-size: 15px;
+    color: #0d6784;
+    font-weight: 400;
+    border-bottom: 1px solid #558fa3;
+    text-transform: uppercase;
+    padding-bottom: 15px;
+    line-height: 30px
+}
+
+.cv-preview .container h2 .edudetails,.cv-preview .container h2 .pdetails,.cv-preview .container h2 .prjtdetails,.cv-preview .container h2 .sdetails,.cv-preview .container h2 .wdetails,.cv-preview .container h2 .wexpernce {
+    width: 29px;
+    font-family: font_cv_preview;
+    font-size: 27px;
+    background-color: #0d6784;
+    border-radius: 60px;
+    color: #fff;
+    margin-right: 14px
+}
+
+.cv-preview .container h2 .sdetails {
+    font-size: 18px;
+    width: 26px;
+    padding-left: 5px
+}
+
+.cv-preview .container ul {
+    padding-top: 10px
+}
+
+.cv-preview .container ul li {
+    padding-bottom: 6px
+}
+
+.cv-preview .container ul li span:not(.key) {
+    padding-left: 50px
+}
+
+.cv-preview .container ul .edu-detailsli {
+    padding-bottom: 0
+}
+
+.cv-preview .container section {
+    padding-top: 5px
+}
+
+.cv-preview .container .edu-detailsli span:not(.key) {
+    margin-bottom: 7px
+}
+
+.cv-preview .container .project-details ul li span:not(.key) {
+    margin-bottom: 7px
+}
+
+.preview header h1,.preview header ul li span {
+    font-family: roboto
+}
+
+.preview .container {
+    padding-bottom: 60px
+}
+
+.preview .container section span {
+    width: 76%
+}
+
+.preview .container h2,.preview .container span {
+    font-family: roboto
+}
+
+.resume-sample-wrapper {
+    padding: 0 12px
+}
+
+.resume-sample-wrapper p {
+    font-family: roboto;
+    font-size: 1.4em;
+    padding: 30px 0 20px
+}
+
+.resume-sample-wrapper img {
+    width: 100%
+}
+
+@media only screen and (max-width: 720px) {
+    .preview .dwnldLink {
+        right:3%;
+        top: 24px
+    }
+
+    .preview .container ul li span:not(.key) {
+        padding-left: 0
+    }
+
+    .preview .container section span {
+        width: 60%
+    }
+
+    .preview .container span.key {
+        width: 40%
+    }
+
+    .preview header ul li {
+        margin-top: 6px
+    }
+}
+
+.up-margin {
+    margin: 243px 0 0 20px ;
+}

@@ -8,26 +8,46 @@ import Class12 from './component/Class12/Class12';
 import LoginDetails from './component/LoginDetails/LoginDetails';
 import MailerSettings from './component/MailerSettings/MailerSettings';
 import PersonalDetails from './component/PersonalDetails/PersonalDetails';
-import Qualification from './component/Qualification/Qualification';
+import Qualification from './component/Qualification/QualificationDetails/QualificationDetails';
 import WorkPreference from './component/WorkPreference/WorkPreference';
 import InformationBox from './component/InformationBox/InformationBox';
+import Template from './component/Template/Template';
 import Button from './component/Button/Button';
+
 class App extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state={
+      email: '',
+      password: ''
+    };
+
+    this.onValueChanged = this.onValueChanged.bind(this);
+  }
+  
   componentDidMount() {
   }
 
+  onValueChanged(event){
+    if(event.target.classList.contains('email')){
+      console.log(event.target.value);
+      this.setState({email:event.target.value});
+    }
+      
+  }
+
   render() {
+
     return(
-      <div className="page">
+      <div>
           <Header/>
         <div className="body">
           <div className="left-sec">
             <InformationBox/>
-            <LoginDetails/>
+            <LoginDetails state={this.state} onValueChanged={this.onValueChanged} />
             <HighestDegree/>
-            <Qualification id="Doctorate"/>
-            <Qualification id="Post_Graduation"/>
-            <Qualification id="Graduation"/>
+            <Qualification/>
             <Class12/>
             <CertificateCourse/>
             <WorkPreference/>
@@ -35,15 +55,9 @@ class App extends Component {
             <MailerSettings/>
             <Button/>
           </div>
-
-          {/* <div className="right-sec">
-              <div>
-                <selectTemplate/>
-              </div>
-              <div>
-                <Template/>
-              </div>
-          </div> */}
+          <div className="right-sec">
+            <Template {...this.state}/>
+          </div>
         </div>
         <Footer/>
       </div>

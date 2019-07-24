@@ -3,6 +3,54 @@ import './WorkPreference.css';
 
 class WorkPreference extends Component {
 
+    state = {
+        workingType: '',
+        workingDate: '',
+        workingMonth: '',
+        workingYear: '',
+        workingLocation: ''
+    }
+
+    workingTypeFullHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingType:event})
+    }
+
+    workingTypePartHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingType:event})
+    }
+    workingTypeInternshipHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingType:event})
+    }
+
+    workingImmediatelyHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingDate:event})
+    }
+
+    workingProvideDateHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingDate:event})
+    }
+
+    joiningMonthHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingMonth:event.target.value})
+    }
+
+    joiningYearHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingYear:event.target.value})
+    }
+
+    workingLocationHandler(event) {
+        console.log(event.target.value);
+        this.setState({workingLocation:event.target.value});
+    }
+
+
     render() {
         return (
             <div className='border-box'>
@@ -12,15 +60,15 @@ class WorkPreference extends Component {
                     <label>Specify your preference for:</label><br/>
                     <form className="job_preference in-line">
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="wp_fulltime"/>FullTime
+                        <input type="radio" name="radio" id="wp_fulltime" value="Full Time" onChange={(event)=>{this.workingTypeFullHandler(event)}}/>FullTime
                         <span className="checkmark"></span>
                         </label>
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="wp_parttime"/>Part Time
+                        <input type="radio" name="radio" id="wp_parttime" value="Part Time" onChange={(event)=>{this.workingTypePartHandler(event)}}/>Part Time
                         <span className="checkmark"></span>
                         </label>
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="wp_internship"/>Internship
+                        <input type="radio" name="radio" id="wp_internship" value="Internship" onChange={(event)=>{this.workingTypeInternshipHandler(event)}}/>Internship
                         <span className="checkmark"></span>
                         </label>
                     </form>
@@ -29,12 +77,12 @@ class WorkPreference extends Component {
                     <label>When can you start working?:</label><br/>
                     <form>
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="wp_immediately"/>Immediately
+                        <input type="radio" name="radio" id="wp_immediately" value="Immediately" onChange={(event)=>{this.workingImmediatelyHandler(event)}}/>Immediately
                         </label>
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="wp_provide_time"/>
+                        <input type="radio" name="radio" id="wp_provide_time" value="From" onChange={(event)=>{this.workingProvideDateHandler(event)}}/>
                         </label>
-                        <select className='joining-month' id="wp_joining_month" >
+                        <select className='joining-month' id="wp_joining_month" onChange={(event)=>{this.joiningMonthHandler(event)}} >
                             <option value="" >Month</option>
                             <option value="Jan">Jan</option>
                             <option value="Feb">Feb</option>
@@ -49,7 +97,7 @@ class WorkPreference extends Component {
                             <option value="Nov">Nov</option>
                             <option value="Dec">Dec</option>
                         </select>
-                        <select className='joining-year' id="wp_joining_year">
+                        <select className='joining-year' id="wp_joining_year" onChange={(event)=>{this.joiningYearHandler(event)}}>
                             <option value="" >Year</option>
                             <option value="2021">2021</option>
                             <option value="2020">2020</option>
@@ -59,7 +107,7 @@ class WorkPreference extends Component {
                 </div>
                 <div>
                 <label className="pre_loc">Prefered Location:</label>
-                    <select className="location" size="4" id="prefered_location">
+                    <select className="location" size="4" id="prefered_location" onChange={(event)=>{this.workingLocationHandler(event)}}>
                         <option value="Anywhere in India">Anywhere in India</option>
                         <option value="West India">West India</option>
                         <option value="East India">East India</option>
