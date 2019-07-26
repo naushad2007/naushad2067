@@ -3,33 +3,12 @@ import './CertificateCourses.css';
 
 class CertificateCourses extends Component {
 
-    state = {
-        certificateCourse: '',
-        courseTimeMonth: '',
-        courseTimeYear: ''
-    }
-
-    certificateCourseHandler(event) {
-        console.log(event.target.value);
-        this.setState({certificateCourse:event.target.value})
-    }
-
-    courseTimeYearHandler(event) {
-        console.log(event.target.value);
-        this.setState({courseTimeYear:event.target.value})
-    }
-
-    courseTimeMonthHandler(event) {
-        console.log(event.target.value);
-        this.setState({courseTimeMonth:event.target.value})
-    }
-
     render() {
         return (
             <div className='certi border-box'>
                 <div>
                     <label>Certificate and Courses:</label>
-                    <select id="certi_course" onChange={(event)=>{this.certificateCourseHandler(event)}}>
+                    <select id="certi_course" className="certi_course" onChange={this.props.onValueChanged} value={this.props.certificateCourse}>
                         <option value="">Select</option>
                         <option value="ML">ML</option>
                         <option value="Blockchain">Blockchain</option>
@@ -42,13 +21,13 @@ class CertificateCourses extends Component {
                     <label>Duration:</label>
                     <div className='course-duration in-line'>
                         <div className='in-line'>
-                            <select id="course-time-year" onChange={(event)=>{this.courseTimeYearHandler(event)}}>
+                            <select id="course-time-year" className="course_time_year" onChange={this.props.onValueChanged} value={this.props.courseTimeYear} >
                                 <option value="" >Years</option> 
                                 {/*--TODO: 0 to 20 using js--*/}
                             </select>
                         </div>
                         <div className='in-line'>
-                            <select id='course-time-month' onChange={(event)=>{this.courseTimeMonthHandler(event)}}>
+                            <select id='course-time-month' className="course_time_month" onChange={this.props.onValueChanged} value={this.props.courseTimeMonth} >
                                 <option value=""  >Months</option>
                                 {/*--6.TODO range 0 to 11--*/}
                             </select>

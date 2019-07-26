@@ -5,49 +5,6 @@ import { print_city, print_state } from './../location'
 
 class PersonalDetails extends Component {
 
-    state = {
-        name: '',
-        dob: '',
-        mobile: '',
-        std: '',
-        telephone: '',
-        homeCity: '',
-        homeState: '',
-        currentCity: '',
-        currentState: '',
-        gender: ''
-    }
-
-    nameHandler(event) {
-        console.log(event.target.value);
-        this.setState({name:event.target.value})
-    }
-    dobHandler(event) {
-        console.log(event.target.value);
-        this.setState({dob:event.target.value})
-    }
-    mobileHandler(event) {
-        console.log(event.target.value);
-        this.setState({mobile:event.target.value})
-    }
-    stdHandler(event) {
-        console.log(event.target.value);
-        this.setState({std:event.target.value})
-    }
-    telephoneHandler(event) {
-        console.log(event.target.value);
-        this.setState({telephone:event.target.value})
-    }
-
-    genderFemaleHandler(event) {
-        console.log(event.target.value);
-        this.setState({gender:event.target.value})
-    }
-    genderMaleHandler(event) {
-        console.log(event.target.value);
-        this.setState({gender:event.target.value})
-    }
-
     render() {
         return (
             <div className='personal-details border-box'>
@@ -55,32 +12,32 @@ class PersonalDetails extends Component {
                 <hr className='hr-solid'/>
                 <div>
                     <label>Name:</label>
-                    <input className="name" type="text" name="name" id="name" onChange={(event)=>{this.nameHandler(event)}} />
+                    <input className="name" type="text" name="name" id="name" onChange={this.props.onValueChanged} value={this.props.name}/>
                 </div>
                 <div>
                     <label>Gender:</label>
                     <form className="gender in-line">
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="gender_female" value="Female" onChange={(event)=>{this.genderFemaleHandler(event)}} />Female
+                        <input type="radio" name="radio" id="gender_female" className="gender_female"  onChange={this.props.onValueChanged} value={this.props.gender}/>Female
                         </label>
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="gender_male" value="Male" onChange={(event)=>{this.genderMaleHandler(event)}} />Male
+                        <input type="radio" name="radio" id="gender_male" className="gender_male"  onChange={this.props.onValueChanged} value={this.props.gender}/>Male
                         </label>
                     </form>
                 </div>
                 <div>
                     <label>Date of Birth:</label>
-                    <input id="dob" className="dob" type="date" name="bday" onChange={(event)=>{this.dobHandler(event)}}/><br/>
+                    <input id="dob" className="dob" type="date" name="bday" onChange={this.props.onValueChanged} value={this.props.dob} /><br/>
                 </div>
                 <div>
                     <label>Contact Numbers:</label><br/>
                     <div className="contact">
                         <label>Mobile:</label>
-                        <input id="mobile" className="mob" type="number" name="mob" step="1" min="1111111111" max="9999999999" onChange={(event)=>{this.mobileHandler(event)}} /><br/>
+                        <input id="mobile" className="mob" type="number" name="mob" step="1" min="1111111111" max="9999999999" onChange={this.props.onValueChanged} value={this.props.mobile} /><br/>
                         <div>
                             <label>Phone:</label>
-                            <input id="std" type="number" name="std" step="1" placeholder="STD code" onChange={(event)=>{this.stdHandler(event)}} />
-                            <input id="telephone" type="number" name="tel" step="1" placeholder="Telephone No." onChange={(event)=>{this.telephoneHandler(event)}} />
+                            <input id="std" type="number" name="std" step="1" placeholder="STD code" className="std" onChange={this.props.onValueChanged} value={this.props.std}/>
+                            <input id="telephone" type="number" name="tel" step="1" placeholder="Telephone No." className="telephone" onChange={this.props.onValueChanged} value={this.props.telephone} />
                         </div>
                     </div>
                 </div>

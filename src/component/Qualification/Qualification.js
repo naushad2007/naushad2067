@@ -1,87 +1,23 @@
 import React, { Component } from 'react';
-import './QualificationDetails.css';
+import './Qualification.css';
 
 class Qualification extends Component {
-
-    state = {
-        degreeType: '',
-        college: '',
-        branch: '',
-        specilization: '',
-        passingMonth: '',
-        passingYear: '',
-        marks: '',
-        achievement: '',
-        markingScheme: ''
-    }
-
-    fullTimeDegreeHandler(event) {
-        console.log(event.target.value);
-        this.setState({degreeType:"Full Time"})
-    }
-
-    partTimeDegreeHandler(event) {
-        console.log(event.target.value);
-        this.setState({degreeType:"Part Time"})
-    }
-
-    correspondanceDegreeHandler(event) {
-        console.log(event.target.value);
-        this.setState({degreeType:"Correspondance"})
-    }
-
-    collegeHandler(event) {
-        console.log(event.target.value);
-        this.setState({college:event.target.value})
-    }
-
-    branchHandler(event) {
-        console.log(event.target.value);
-        this.setState({branch:event.target.value})
-    }
-    specilizationHandler(event) {
-        console.log(event.target.value);
-        this.setState({specilization:event.target.value})
-    }
-    passingMonthHandler(event) {
-        console.log(event.target.value);
-        this.setState({passingMonth:event.target.value})
-    }
-    passingYearHandler(event) {
-        console.log(event.target.value);
-        this.setState({passingYear:event.target.value})
-    }
-
-    markingSchemeHandler(event) {
-        console.log(event.target.value);
-        this.setState({markingScheme:event.target.value})
-    }
-
-    marksHandler(event) {
-        console.log(event.target.value);
-        this.setState({marks:event.target.value})
-    }
-
-    achievementsHandler(event) {
-        console.log(event.target.value);
-        this.setState({achievement:event.target.value})
-    }
 
     render() {
         return (
             <div className="border-box">
                 <div>
-                    <p>Degree:</p>
+                    <p>Degree: Doctorate</p>
                     <div>
                         <form>
                             <label>
-                            <input type="radio" id="docFullTime" value="Full Time" onChange={(event)=>{this.fullTimeDegreeHandler(event)}}/>Full Time
+                            <input type="radio" className="docFullTime" value="Full Time" onChange={this.props.onValueChanged}/>Full Time
                             </label>
                             <label>
-                            <input type="radio" id="docPartTime" value="Part Time" onChange={(event)=>{this.partTimeDegreeHandler(event)}}/>Part Time
+                            <input type="radio" className="docPartTime" value="Part Time" onChange={this.props.onValueChanged}/>Part Time
                             </label>
                             <label>
-                            <input type="radio" id="docCorrespondence" value="Correspondence" onChange={(event)=>{this.correspondanceDegreeHandler(event)}}/>Correspondence
+                            <input type="radio" className="docCorrespondence" value="Correspondence" onChange={this.props.onValueChanged}/>Correspondence
                             </label>
                         </form>
                     </div>
@@ -89,13 +25,13 @@ class Qualification extends Component {
 
                 <div>
                     <label>College/Institute, City:</label>
-                    <input id="docCollege" className="college_doc" type="text" onChange={(event)=>{this.collegeHandler(event)}} /><br/>                         
+                    <input id="docCollege" className="college_doc" type="text" onChange={this.props.onValueChanged} value={this.props.docCollege} /><br/>                         
                     <p className='p-instruction'>Start typing few words of institute name to select from the suggestions.</p>
                 </div>
 
                 <div>
                     <label>Courses:</label>
-                    <select id='docType' className="doc_type" onChange={(event)=>{this.branchHandler(event)}}>  
+                    <select id='docType' className="doc_type" onChange={this.props.onValueChanged} value={this.props.docBranch}>  
                         <option value="" >Select Course</option>
                         <option value="Ph.D/Doctorate">Ph.D/Doctorate</option>
                         <option value="MPHIL">MPHIL</option>
@@ -105,7 +41,7 @@ class Qualification extends Component {
 
                 <div>
                     <label>Specilization:</label>
-                    <select id='docSpecilization' className='specilization-doctorate' onChange={(event)=>{this.specilizationHandler(event)}}>
+                    <select id='docSpecilization' className='specilization-doctorate' onChange={this.props.onValueChanged} value={this.props.docSpecilization}>
                         <option value='' name=''>Select</option>
                         <option value='Medicine' name=''>Medicine</option>
                         <option value='Machanical' name=''>Machanical</option>
@@ -117,7 +53,7 @@ class Qualification extends Component {
                 <div>
                     <label>Year of Passing:</label><nobr/>
                     <div className="in-line">
-                        <select id="docTimeYear" onChange={(event)=>{this.passingMonthHandler(event)}}>
+                        <select className="docTimeMonth" onChange={this.props.onValueChanged} value={this.props.docPassingMonth}>
                             <option value="" >Month</option>
                             <option value="Jan">Jan</option>
                             <option value="Feb">Feb</option>
@@ -133,7 +69,7 @@ class Qualification extends Component {
                             <option value="Dec">Dec</option>
                         </select>
 
-                        <select id="docTimeMonth" onChange={(event)=>{this.passingYearHandler(event)}}>
+                        <select className="docTimeYear" onChange={this.props.onValueChanged} value={this.props.docPassingYear}>
                             <option value="" >Year</option>
                             <option value="2022">2022</option>
                             <option value="2021">2021</option>
@@ -148,7 +84,7 @@ class Qualification extends Component {
 
                 <div>
                     <label>Grading System:</label>
-                    <select id="docGradeScheme" className="grading_scheme_doc" onChange={(event)=>{this.markingSchemeHandler(event)}} >
+                    <select id="docGradeScheme" className="grading_scheme_doc" onChange={this.props.onValueChanged} value={this.props.docGradingScheme}>
                         <option value="" >Select</option>
                         <option value="Scale 10 Grading System">Scale 10 Grading System</option>
                         <option value="Scale 4 Grading System">Scale 4 Grading System</option>
@@ -159,12 +95,12 @@ class Qualification extends Component {
 
                 <div>
                     <label>Marks/Grade:</label>
-                    <input  id="docMarks" type='number' className='doctorate-marks' step='0.0001' onChange={(event)=>{this.marksHandler(event)}}/>
+                    <input  id="docMarks" type='number' value={this.props.marks} className='doctorate-marks' step='0.0001'onChange={this.props.onValueChanged}/>
                 </div>
 
                 <div>
                     <label>Academic Achievements:</label>
-                    <select id="ach_doc" className="achievement_doc" onChange={(event)=>{this.achievementsHandler(event)}}>
+                    <select id="ach_doc" className="achievement_doc" onChange={this.props.onValueChanged} value={this.props.docAchievement}>
                         <option value="" >Select</option>
                         <option value="College Topper">College Topper</option>
                         <option value="Department Topper">Department Topper</option>

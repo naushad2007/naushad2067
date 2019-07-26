@@ -426,10 +426,12 @@ label {
 }
 .left-sec{
   width: 50%;
+  margin: 10px 0  0 10px;
   float: left;
 }
 .right-sec {
-  width: 50%;
+  margin: 12px 0  0 35px;
+  width: 46%;
   display: inline-block;
 }
 

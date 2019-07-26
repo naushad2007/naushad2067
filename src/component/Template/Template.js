@@ -21,11 +21,11 @@ class Template extends Component {
 
                 <div className="preview  cv-preview up-margin">
                     <header>
-                        <h1 id="name"></h1>
+                        <h1 id="name">{this.props.name}</h1>
                         <ul>
                             <li>
                                 <span className="call">E</span>
-                                <span id="mobile"></span>
+                                <span id="mobile">+91 {this.props.mobile}</span>
                             </li>
                             <li>
                                 <span className="post">B</span>
@@ -41,14 +41,22 @@ class Template extends Component {
                             </h2>
                             <ul>
                                 <li className="edu-details">
+                                
                                     <span className="key">Graduation</span>
-                                    <span id="doctorate"></span>
-                                    <span id="pg"></span>
-                                    <span id="ug"></span>
+                                    {/* <span id="doctorate"></span>
+                                    <span id="pg"></span> */}
+                                    <span id="ug">Doctorate</span>
+                                    <span>{this.props.docBranch}, from {this.props.docCollege} in {this.props.docSpecilization}</span>
+                                    <span>Passing Year: {this.props.docPassingYear} ({this.props.docDegreeType})</span>
+                                    <span>Marks : {this.props.docMarks} ({this.props.docGradingScheme})</span>
+                                    <span>Achievement: {this.props.docAchievement}</span>
+                                   
                                 </li>
                                 <li>
                                     <span className="key">Class XII</span>
                                     <span id="class12"></span>
+                                    <span>{this.props.board12}/{this.props.medium12} with {this.props.marks12}% in the year {this.props.year12}</span>
+                                    <span>Maths Marks: {this.props.mathsMarks12} EnglishMarks: {this.props.englishMarks12}</span>
                                 </li>
                                 <li>
                                     <span className="key">Class X</span>
@@ -72,24 +80,24 @@ class Template extends Component {
                                     <span id="homeLocation"></span>
                                 </li>
                                 <li>
-                                    <span className="key">Date of birth</span>
-                                    <span id="dob"></span>
+                                    <span className="key">Date of birth:</span>
+                                    <span id="dob">{this.props.dob}</span>
                                 </li>
                                 <li>
                                     <span className="key">Gender</span>
-                                    <span id="gender"></span>
+                                    <span id="gender">{this.props.gender}</span>
                                 </li>
                                 <li>
                                     <span className="key">Looking for a </span>
-                                    <span id="workPreference"></span>
+                                    <span id="workPreference">{this.props.workingType}</span>
                                 </li>
                                 <li>
                                     <span className="key">Can start working </span>
-                                    <span id="startWorking"></span>
+                                    <span id="startWorking">{this.props.workingDate} {this.props.workingMonth} {this.props.workingYear}</span>
                                 </li>
                                 <li>
                                     <span className="key">Preferred location </span>
-                                    <span id="preferedLocation"></span>
+                                    <span id="preferedLocation">{this.props.workingLocation}</span>
                                 </li>
                             </ul>
                         </section>

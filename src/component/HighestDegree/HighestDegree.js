@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
 import './HighestDegree.css';
-import EducationComponent from './../Qualification/EducationComponents/EducationComponents';
 
 class HighestDegree extends Component {
-
-    state = {
-        highestDegree: '1'
-    }
 
     highestDegreeHandler(event) {
         console.log(event.target.value);
@@ -22,10 +17,10 @@ class HighestDegree extends Component {
                 <h4>Education:</h4>
                 <hr className="hr-solid"></hr>
                 <label>Highest Degree:</label>
-                <select id="educationLevel" className="highest-degree" onChange={(event)=>{this.highestDegreeHandler(event)}}>
-                    <option value="1">Graduation / Bachelors Degree or Equivilant</option>
-                    <option value="2">Post Graduation / Masters Degree or Equivilant</option>
-                    <option value="3">Doctorate</option>
+                <select id="educationLevel" className="highest-degree" value={this.props.highestDegree} onChange={this.props.onValueChanged}>
+                    <option value="Graduation / Bachelors Degree or Equivilant">Graduation / Bachelors Degree or Equivilant</option>
+                    <option value="Post Graduation / Masters Degree or Equivilant">Post Graduation / Masters Degree or Equivilant</option>
+                    <option value="Doctorate">Doctorate</option>
                 </select>
                 <p className='p-instruction'>You may also enter the degree that you are currently pursuing</p>
             </div>

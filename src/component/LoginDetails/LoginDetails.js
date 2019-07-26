@@ -2,20 +2,6 @@ import React, { Component } from 'react';
 import './LoginDetails.css';
 
 class LoginDetails extends Component {
-
-    state = {
-        password: ''
-    }
-
-    passwordHandler(event) {
-        console.log(event.target.value);
-        this.setState({password:event.target.value})
-    }
-    cpasswordHandler(event) {
-        console.log(event.target.value);
-        this.setState({cpassword:event.target.value})
-    }
-
     render() {
 
 
@@ -35,10 +21,12 @@ class LoginDetails extends Component {
                 </div>
                 <div>
                     <label>Password:</label>  
-                    <input id="passwd" className="passwd" type="password" onChange={(event)=>{this.passwordHandler(event)}}/>
+                    <input id="passwd" className="passwd" value={this.props.password} type="password" 
+                        onChange={this.props.onValueChanged}/>
                     <br/>
                     <label>Confirm Password:</label>
-                    <input id="cpasswd" className="cpasswd" type="password" onChange={(event)=>{this.cpasswordHandler(event)}} />
+                    <input id="cpasswd" className="cpasswd" value={this.props.cpassword} 
+                        type="password" onChange={this.props.onValueChanged} />
                 </div>
             </div>
         );
