@@ -97,13 +97,22 @@ class App extends Component {
       partnerMails: true,
       promotions: true,
 
-      nameQualification: ''
+      nameQualification: '',
+      nameClass: '',
+
+
+      docisHidden: true,
+      pgisHidden: true,
+      ugisHidden: false
     };
 
     this.onValueChanged = this.onValueChanged.bind(this);
+    this.onValueChangedDOC = this.onValueChangedDOC.bind(this);
+    this.onValueChangedPG = this.onValueChangedPG.bind(this);
+    this.onValueChangedUG = this.onValueChangedUG.bind(this);
   }
   
-  componentDidMount() {
+  componentDidMount(){
   }
 
   onValueChanged(event){
@@ -117,45 +126,22 @@ class App extends Component {
       console.log(event.target.value);
       this.setState({cpassword:event.target.value});
     } else if(event.target.classList.contains('highest-degree')) {
-      this.setState({highestDegree:event.target.value});
-    } 
-    
-    else if(event.target.classList.contains('docFullTime')) {
+      this.setState({highestDegree:event.target.value}); 
       console.log(event.target.value);
-      this.setState({docDegreeType:event.target.value});
-    } else if(event.target.classList.contains('docPartTime')) {
-      console.log(event.target.value);
-      this.setState({docDegreeType:event.target.value});
-    } else if(event.target.classList.contains('docCorrespondence')) {
-      console.log(event.target.value);
-      this.setState({docDegreeType:event.target.value});
-    } else if(event.target.classList.contains('college_doc')) {
-      console.log(event.target.value);
-      this.setState({docCollege:event.target.value});
-    } else if(event.target.classList.contains('doc_type')) {
-      console.log(event.target.value);
-      this.setState({docBranch:event.target.value});
-    } else if(event.target.classList.contains('specilization-doctorate')) {
-      console.log(event.target.value);
-      this.setState({docSpecilization:event.target.value});
-    } else if(event.target.classList.contains('docTimeMonth')) {
-      console.log(event.target.value);
-      this.setState({docPassingMonth:event.target.value});
-    } else if(event.target.classList.contains('docTimeYear')) {
-      console.log(event.target.value);
-      this.setState({docPassingYear:event.target.value});
-    } else if(event.target.classList.contains('grading_scheme_doc')) {
-      console.log(event.target.value);
-      this.setState({docGradingScheme:event.target.value});
-    } else if(event.target.classList.contains('doctorate-marks')) {
-      console.log(event.target.value);
-      this.setState({docMarks:event.target.value});
-    } else if(event.target.classList.contains('achievement_doc')) {
-      console.log(event.target.value);
-      this.setState({docAchievement:event.target.value});
-    } 
-    
-    else if(event.target.classList.contains('class12-marks')) {
+      if(event.target.value === 'Graduation / Bachelors Degree or Equivilant') {
+        this.setState({docisHidden:true});
+        this.setState({pgisHidden:true});
+        this.setState({ugisHidden:false});
+    } else if(event.target.value === 'Post Graduation / Masters Degree or Equivilant'){
+        this.setState({docisHidden:true});
+        this.setState({pgisHidden:false});
+        this.setState({ugisHidden:false});
+    } else if(event.target.value === 'Doctorate') {
+        this.setState({docisHidden:false});
+        this.setState({pgisHidden:false});
+        this.setState({ugisHidden:false});
+      }
+    } else if(event.target.classList.contains('class12-marks')) {
       console.log(event.target.value);
       this.setState({marks12:event.target.value});
     } else if(event.target.classList.contains('passout-year-12')) {
@@ -245,6 +231,118 @@ class App extends Component {
     } 
   }
 
+  onValueChangedDOC(event) {
+    if(event.target.classList.contains('docFullTime')) {
+      console.log(event.target.value);
+      this.setState({docDegreeType:event.target.value});
+    } else if(event.target.classList.contains('docPartTime')) {
+      console.log(event.target.value);
+      this.setState({docDegreeType:event.target.value});
+    } else if(event.target.classList.contains('docCorrespondence')) {
+      console.log(event.target.value);
+      this.setState({docDegreeType:event.target.value});
+    } else if(event.target.classList.contains('college_doc')) {
+      console.log(event.target.value);
+      this.setState({docCollege:event.target.value});
+    } else if(event.target.classList.contains('doc_type')) {
+      console.log(event.target.value);
+      this.setState({docBranch:event.target.value});
+    } else if(event.target.classList.contains('specilization-doctorate')) {
+      console.log(event.target.value);
+      this.setState({docSpecilization:event.target.value});
+    } else if(event.target.classList.contains('docTimeMonth')) {
+      console.log(event.target.value);
+      this.setState({docPassingMonth:event.target.value});
+    } else if(event.target.classList.contains('docTimeYear')) {
+      console.log(event.target.value);
+      this.setState({docPassingYear:event.target.value});
+    } else if(event.target.classList.contains('grading_scheme_doc')) {
+      console.log(event.target.value);
+      this.setState({docGradingScheme:event.target.value});
+    } else if(event.target.classList.contains('doctorate-marks')) {
+      console.log(event.target.value);
+      this.setState({docMarks:event.target.value});
+    } else if(event.target.classList.contains('achievement_doc')) {
+      console.log(event.target.value);
+      this.setState({docAchievement:event.target.value});
+    } 
+  }
+
+  onValueChangedPG(event) {
+    if(event.target.classList.contains('docFullTime')) {
+      console.log(event.target.value);
+      this.setState({pgDegreeType:event.target.value});
+    } else if(event.target.classList.contains('docPartTime')) {
+      console.log(event.target.value);
+      this.setState({pgDegreeType:event.target.value});
+    } else if(event.target.classList.contains('docCorrespondence')) {
+      console.log(event.target.value);
+      this.setState({pgDegreeType:event.target.value});
+    } else if(event.target.classList.contains('college_doc')) {
+      console.log(event.target.value);
+      this.setState({pgCollege:event.target.value});
+    } else if(event.target.classList.contains('doc_type')) {
+      console.log(event.target.value);
+      this.setState({pgBranch:event.target.value});
+    } else if(event.target.classList.contains('specilization-doctorate')) {
+      console.log(event.target.value);
+      this.setState({pgSpecilization:event.target.value});
+    } else if(event.target.classList.contains('docTimeMonth')) {
+      console.log(event.target.value);
+      this.setState({pgPassingMonth:event.target.value});
+    } else if(event.target.classList.contains('docTimeYear')) {
+      console.log(event.target.value);
+      this.setState({pgPassingYear:event.target.value});
+    } else if(event.target.classList.contains('grading_scheme_doc')) {
+      console.log(event.target.value);
+      this.setState({pgGradingScheme:event.target.value});
+    } else if(event.target.classList.contains('doctorate-marks')) {
+      console.log(event.target.value);
+      this.setState({pgMarks:event.target.value});
+    } else if(event.target.classList.contains('achievement_doc')) {
+      console.log(event.target.value);
+      this.setState({pgAchievement:event.target.value});
+    } 
+  }
+
+  onValueChangedUG(event) {
+    if(event.target.classList.contains('docFullTime')) {
+      console.log(event.target.value);
+      this.setState({ugDegreeType:event.target.value});
+    } else if(event.target.classList.contains('docPartTime')) {
+      console.log(event.target.value);
+      this.setState({ugDegreeType:event.target.value});
+    } else if(event.target.classList.contains('docCorrespondence')) {
+      console.log(event.target.value);
+      this.setState({ugDegreeType:event.target.value});
+    } else if(event.target.classList.contains('college_doc')) {
+      console.log(event.target.value);
+      this.setState({ugCollege:event.target.value});
+    } else if(event.target.classList.contains('doc_type')) {
+      console.log(event.target.value);
+      this.setState({ugBranch:event.target.value});
+    } else if(event.target.classList.contains('specilization-doctorate')) {
+      console.log(event.target.value);
+      this.setState({ugSpecilization:event.target.value});
+    } else if(event.target.classList.contains('docTimeMonth')) {
+      console.log(event.target.value);
+      this.setState({ugPassingMonth:event.target.value});
+    } else if(event.target.classList.contains('docTimeYear')) {
+      console.log(event.target.value);
+      this.setState({ugPassingYear:event.target.value});
+    } else if(event.target.classList.contains('grading_scheme_doc')) {
+      console.log(event.target.value);
+      this.setState({ugGradingScheme:event.target.value});
+    } else if(event.target.classList.contains('doctorate-marks')) {
+      console.log(event.target.value);
+      this.setState({ugMarks:event.target.value});
+    } else if(event.target.classList.contains('achievement_doc')) {
+      console.log(event.target.value);
+      this.setState({ugAchievement:event.target.value});
+    } 
+  }
+
+
   render() {
 
     return(
@@ -255,8 +353,11 @@ class App extends Component {
             {/* <InformationBox/> */}
             <LoginDetails state={this.state} onValueChanged={this.onValueChanged} />
             <HighestDegree state={this.state} onValueChanged={this.onValueChanged} />
-            <Qualification id="doc" className="doc" state={this.state} onValueChanged={this.onValueChanged} />
-            <Class12 state={this.state} onValueChanged={this.onValueChanged} />
+            {!this.state.docisHidden && <Qualification state={this.state} onValueChangedDOC={this.onValueChangedDOC} nameQualification={"Doctorate"}/>}
+            {!this.state.pgisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedPG} nameQualification={"Post Graduation / Masters Degree or Equivilant"}/>}
+            <Qualification state={this.state} onValueChanged={this.onValueChangedUG} nameQualification={"Graduation / Bachelors Degree or Equivilant"}/>
+            <Class12 state={this.state} onValueChanged={this.onValueChanged} nameClass={"Class12"}/>
+            <Class12 state={this.state} onValueChanged={this.onValueChanged} nameClass={"Class10"}/>
             <CertificateCourse state={this.state} onValueChanged={this.onValueChanged} />
             <WorkPreference state={this.state} onValueChanged={this.onValueChanged} />
             <PersonalDetails state={this.state} onValueChanged={this.onValueChanged} />

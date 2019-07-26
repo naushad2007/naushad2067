@@ -8,7 +8,7 @@ class Class12 extends Component {
         return (
             <div className="border-box">
                 <div>
-                    <label className="align-left">Class XII</label><br/>
+                    <label className="align-left">{this.props.nameClass}</label><br/>
                     <div className="in-line">
                         <select id="12_board" className="class12_board" onChange={this.props.onValueChanged} value={this.props.board12}>
                             <option value="">Board/Diploma</option>

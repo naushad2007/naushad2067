@@ -45,11 +45,11 @@ class Template extends Component {
                                     <span className="key">Graduation</span>
                                     {/* <span id="doctorate"></span>
                                     <span id="pg"></span> */}
-                                    <span id="ug">Doctorate</span>
-                                    <span>{this.props.docBranch}, from {this.props.docCollege} in {this.props.docSpecilization}</span>
-                                    <span>Passing Year: {this.props.docPassingYear} ({this.props.docDegreeType})</span>
-                                    <span>Marks : {this.props.docMarks} ({this.props.docGradingScheme})</span>
-                                    <span>Achievement: {this.props.docAchievement}</span>
+                                    <span id="ug">{this.props.highestDegree}</span>
+                                    <span>{this.props.ugBranch}, from {this.props.ugCollege} in {this.props.ugSpecilization}</span>
+                                    <span>Passing Year: {this.props.ugPassingYear} ({this.props.ugDegreeType})</span>
+                                    <span>Marks : {this.props.ugMarks} ({this.props.ugGradingScheme})</span>
+                                    <span>Achievement: {this.props.ugAchievement}</span>
                                    
                                 </li>
                                 <li>
