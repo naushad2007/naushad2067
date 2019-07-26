@@ -60,7 +60,9 @@ class Template extends Component {
                                 </li>
                                 <li>
                                     <span className="key">Class X</span>
-                                    <span id="class10"></span>
+                                    <span id="class12"></span>
+                                    <span>{this.props.board10}/{this.props.medium10} with {this.props.marks10}% in the year {this.props.year10}</span>
+                                    <span>Maths Marks: {this.props.mathsMarks10} EnglishMarks: {this.props.englishMarks10}</span>
                                 </li>
                             </ul>
                         </section>

@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './Qualification.css';
 
 class Qualification extends Component {
+    onChange
+
+
 
     render() {
         return (

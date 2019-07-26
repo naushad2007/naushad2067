@@ -110,6 +110,8 @@ class App extends Component {
     this.onValueChangedDOC = this.onValueChangedDOC.bind(this);
     this.onValueChangedPG = this.onValueChangedPG.bind(this);
     this.onValueChangedUG = this.onValueChangedUG.bind(this);
+    this.onValueChanged12 = this.onValueChanged12.bind(this);
+    this.onValueChanged10 = this.onValueChanged10.bind(this);
   }
   
   componentDidMount(){
@@ -141,24 +143,6 @@ class App extends Component {
         this.setState({pgisHidden:false});
         this.setState({ugisHidden:false});
       }
-    } else if(event.target.classList.contains('class12-marks')) {
-      console.log(event.target.value);
-      this.setState({marks12:event.target.value});
-    } else if(event.target.classList.contains('passout-year-12')) {
-      console.log(event.target.value);
-      this.setState({year12:event.target.value});
-    } else if(event.target.classList.contains('class12_medium')) {
-      console.log(event.target.value);
-      this.setState({medium12:event.target.value});
-    } else if(event.target.classList.contains('class12_board')) {
-      console.log(event.target.value);
-      this.setState({board12:event.target.value});
-    } else if(event.target.classList.contains('class12_marks_math')) {
-      console.log(event.target.value);
-      this.setState({mathsMarks12:event.target.value});
-    } else if(event.target.classList.contains('class12_marks_english')) {
-      console.log(event.target.value);
-      this.setState({englishMarks12:event.target.value});
     } else if(event.target.classList.contains('certi_course')) {
       console.log(event.target.value);
       this.setState({certificateCourse:event.target.value});
@@ -342,6 +326,50 @@ class App extends Component {
     } 
   }
 
+  onValueChanged12(event) {
+    if(event.target.classList.contains('class12-marks')) {
+      console.log(event.target.value);
+      this.setState({marks12:event.target.value});
+    } else if(event.target.classList.contains('passout-year-12')) {
+      console.log(event.target.value);
+      this.setState({year12:event.target.value});
+    } else if(event.target.classList.contains('class12_medium')) {
+      console.log(event.target.value);
+      this.setState({medium12:event.target.value});
+    } else if(event.target.classList.contains('class12_board')) {
+      console.log(event.target.value);
+      this.setState({board12:event.target.value});
+    } else if(event.target.classList.contains('class12_marks_math')) {
+      console.log(event.target.value);
+      this.setState({mathsMarks12:event.target.value});
+    } else if(event.target.classList.contains('class12_marks_english')) {
+      console.log(event.target.value);
+      this.setState({englishMarks12:event.target.value});
+    }
+  }
+
+  onValueChanged10(event) {
+    if(event.target.classList.contains('class12-marks')) {
+      console.log(event.target.value);
+      this.setState({marks10:event.target.value});
+    } else if(event.target.classList.contains('passout-year-12')) {
+      console.log(event.target.value);
+      this.setState({year10:event.target.value});
+    } else if(event.target.classList.contains('class12_medium')) {
+      console.log(event.target.value);
+      this.setState({medium10:event.target.value});
+    } else if(event.target.classList.contains('class12_board')) {
+      console.log(event.target.value);
+      this.setState({board10:event.target.value});
+    } else if(event.target.classList.contains('class12_marks_math')) {
+      console.log(event.target.value);
+      this.setState({mathsMarks10:event.target.value});
+    } else if(event.target.classList.contains('class12_marks_english')) {
+      console.log(event.target.value);
+      this.setState({englishMarks10:event.target.value});
+    }
+  }
+
 
   render() {
 
@@ -356,8 +384,8 @@ class App extends Component {
             {!this.state.docisHidden && <Qualification state={this.state} onValueChangedDOC={this.onValueChangedDOC} nameQualification={"Doctorate"}/>}
             {!this.state.pgisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedPG} nameQualification={"Post Graduation / Masters Degree or Equivilant"}/>}
             <Qualification state={this.state} onValueChanged={this.onValueChangedUG} nameQualification={"Graduation / Bachelors Degree or Equivilant"}/>
-            <Class12 state={this.state} onValueChanged={this.onValueChanged} nameClass={"Class12"}/>
-            <Class12 state={this.state} onValueChanged={this.onValueChanged} nameClass={"Class10"}/>
+            <Class12 state={this.state} onValueChanged={this.onValueChanged12} nameClass={"Class12"}/>
+            <Class12 state={this.state} onValueChanged={this.onValueChanged10} nameClass={"Class10"}/>
             <CertificateCourse state={this.state} onValueChanged={this.onValueChanged} />
             <WorkPreference state={this.state} onValueChanged={this.onValueChanged} />
             <PersonalDetails state={this.state} onValueChanged={this.onValueChanged} />
