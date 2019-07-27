@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import './Qualification.css';
 
 class Qualification extends Component {
-    onChange
-
-
 
     render() {
         return (
@@ -14,13 +11,13 @@ class Qualification extends Component {
                     <div>
                         <form>
                             <label>
-                            <input type="radio" className="docFullTime" value="Full Time" onChange={this.props.onValueChanged}/>Full Time
+                            <input type="radio" name='radio1' className="docFullTime" value="Full Time" onChange={this.props.onValueChanged}/>Full Time
                             </label>
                             <label>
-                            <input type="radio" className="docPartTime" value="Part Time" onChange={this.props.onValueChanged}/>Part Time
+                            <input type="radio" name='radio1' className="docPartTime" value="Part Time" onChange={this.props.onValueChanged}/>Part Time
                             </label>
                             <label>
-                            <input type="radio" className="docCorrespondence" value="Correspondence" onChange={this.props.onValueChanged}/>Correspondence
+                            <input type="radio" name='radio1' className="docCorrespondence" value="Correspondence" onChange={this.props.onValueChanged}/>Correspondence
                             </label>
                         </form>
                     </div>

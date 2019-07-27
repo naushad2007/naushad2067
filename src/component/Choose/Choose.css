@@ -1,0 +1,16 @@
+.nametemp {
+    width: 20px;
+
+}
+label {
+    font-size: 20px;
+    width: 260px;
+}
+
+.move-little {
+    text-align: left;
+}
+
+.move-a-little-more {
+    margin: 0 0 0 10px;
+}

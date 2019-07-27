@@ -14,12 +14,15 @@ import InformationBox from './component/InformationBox/InformationBox';
 import Template from './component/Template/Template';
 import Button from './component/Button/Button';
 import { qualifiedTypeIdentifier } from '@babel/types';
+import Template2 from './component/Template/Template2';
+import Choose from './component/Choose/Choose';
+
 
 class App extends Component {
   constructor(props) {
     super(props);
 
-    this.state={
+    this.state = {
       email: '',
       password: '',
       cpassword: '',
@@ -99,6 +102,8 @@ class App extends Component {
 
       nameQualification: '',
       nameClass: '',
+      template1isHidden: false,
+      template2isHidden: true,
 
 
       docisHidden: true,
@@ -212,6 +217,14 @@ class App extends Component {
     } else if(event.target.classList.contains('promotions')) {
       console.log(this.state.promotions);
       this.setState(prevState => ({promotions:!prevState.promotions}));
+    } else if(event.target.classList.contains('template1')) {
+      console.log(event.target.value);
+      this.setState({template1isHidden:false});
+      this.setState({template2isHidden:true});
+    } else if(event.target.classList.contains('template2')) {
+      console.log(event.target.value);
+      this.setState({template1isHidden:true});
+      this.setState({template2isHidden:false});
     } 
   }
 
@@ -370,6 +383,20 @@ class App extends Component {
     }
   }
 
+  // templateSelect(event) {
+  //   if(event.target.classList.contains('templateSelector')) {
+  //     if(event.target.value === '1') {
+  //       this.setState({template1isHidden:false});
+  //       this.setState({template2isHidden:true});
+  //       console.log("1xs");
+  //     } else if(event.target.value === '2') {
+  //       this.setState({template1isHidden:true});
+  //       this.setState({template2isHidden:false});
+  //       console.log("2xs");
+  //     }
+  //   }
+  // }
+
 
   render() {
 
@@ -378,10 +405,10 @@ class App extends Component {
           <Header/>
         <div className="body">
           <div className="left-sec">
-            {/* <InformationBox/> */}
+            <InformationBox/>
             <LoginDetails state={this.state} onValueChanged={this.onValueChanged} />
-            <HighestDegree state={this.state} onValueChanged={this.onValueChanged} />
-            {!this.state.docisHidden && <Qualification state={this.state} onValueChangedDOC={this.onValueChangedDOC} nameQualification={"Doctorate"}/>}
+            <HighestDegree state={this.state} onValueChanged={this.onValueChanged}/>
+            {!this.state.docisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedDOC} nameQualification={"Doctorate"}/>}
             {!this.state.pgisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedPG} nameQualification={"Post Graduation / Masters Degree or Equivilant"}/>}
             <Qualification state={this.state} onValueChanged={this.onValueChangedUG} nameQualification={"Graduation / Bachelors Degree or Equivilant"}/>
             <Class12 state={this.state} onValueChanged={this.onValueChanged12} nameClass={"Class12"}/>
@@ -393,7 +420,9 @@ class App extends Component {
             <Button state={this.state} onValueChanged={this.onValueChanged} />
           </div>
           <div className="right-sec">
-            <Template {...this.state}/>
+            <Choose nameTemplate={this.state.nameTemplate}  onValueChanged={this.onValueChanged} />
+            {!this.state.template1isHidden && <Template {...this.state}/>}
+            {!this.state.template2isHidden && <Template2 {...this.state}/>}
           </div>
         </div>
         <Footer/>

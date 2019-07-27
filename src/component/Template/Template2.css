@@ -66,7 +66,7 @@
 }
 
 .cv-preview header {
-    background-color: #0d6784;
+    background-color: #5f0a3f;
     padding: 20px 0 40px 6%
 }
 
@@ -113,7 +113,7 @@
 }
 
 .cv-preview .container span.key {
-    width: 800px
+    width: 130px
 }
 
 .cv-preview .container span {
@@ -126,9 +126,9 @@
 
 .cv-preview .container h2 {
     font-size: 15px;
-    color: #0d6784;
+    color: #5f0a3f;
     font-weight: 400;
-    border-bottom: 1px solid #558fa3;
+    border-bottom: 1px solid #5f0a3f;
     text-transform: uppercase;
     padding-bottom: 15px;
     line-height: 30px
@@ -138,7 +138,7 @@
     width: 29px;
     font-family: font_cv_preview;
     font-size: 27px;
-    background-color: #0d6784;
+    background-color: #5f0a3f;
     border-radius: 60px;
     color: #fff;
     margin-right: 14px
@@ -223,7 +223,7 @@
     }
 
     .preview .container span.key {
-        width: 100%
+        width: 40%
     }
 
     .preview header ul li {
@@ -234,3 +234,4 @@
 .keys {
     width: 800px;
 }
+
