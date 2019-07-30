@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './Template2.css';
+import './Template2.scss';//use context API
 
-class Template extends Component {
+class Template2 extends Component {
 
 
     quali() {
@@ -21,6 +21,17 @@ class Template extends Component {
         this.setState();
     }
 
+    // imme() {
+    //     if(this.props.workingDate === "Immediately") {
+    //         this.setState({joiningDateisHidden:true});
+    //         console.log("Immediately");
+    //     } else if(this.props.workingDate === "From") {
+    //         this.setState({joiningDateisHidden:false});
+    //         console.log("From");
+    //     }
+    //     this.setState();
+    // }
+
     render() {
         return (
             // <div>
@@ -36,9 +47,9 @@ class Template extends Component {
 
             //     </div>
             // </div>
-            <div id="template">
+            <div id="template" className="maroon margin_top">
 
-                <div className="preview  cv-preview up-margin">
+                <div id="HTMLtoPDF" className="preview  cv-preview up-margin">
                     <header>
                         <h1 id="name">{this.props.name}</h1>
                         <ul>
@@ -104,6 +115,11 @@ class Template extends Component {
                                     <span>{this.props.board10}/{this.props.medium10} with {this.props.marks10}% in the year {this.props.year10}</span>
                                     <span>Maths Marks: {this.props.mathsMarks10} EnglishMarks: {this.props.englishMarks10}</span>
                                 </li>
+                                <li>
+                                    <span className="key">Certificate and Courses</span>
+                                    <span>{this.props.certificateCourse},</span>
+                                    <span>Duration: {this.props.courseTimeYear} year(s) and {this.props.courseTimeMonth} month(s)</span>
+                                </li>
                             </ul>
                         </section>
                         <section className="work-details"></section>
@@ -115,11 +131,11 @@ class Template extends Component {
                             <ul>
                                 <li>
                                     <span className="key">Current Location</span>
-                                    <span id="currentLocation"></span>
+                                    <span id="currentLocation">{this.props.currentCity}, {this.props.currentState}</span>
                                 </li>
                                 <li>
                                     <span className="key">HomeTown</span>
-                                    <span id="homeLocation"></span>
+                                    <span id="homeLocation">{this.props.homeCity}, {this.props.homeState}</span>
                                 </li>
                                 <li>
                                     <span className="key">Date of birth:</span>
@@ -135,6 +151,7 @@ class Template extends Component {
                                 </li>
                                 <li>
                                     <span className="key">Can start working </span>
+                                    {/* {this.props.joiningDateisHidden && <span id="startWorking">{this.props.workingDate}</span>} */}
                                     <span id="startWorking">{this.props.workingDate} {this.props.workingMonth} {this.props.workingYear}</span>
                                 </li>
                                 <li>
@@ -151,4 +168,4 @@ class Template extends Component {
     }
 }
 
-export default Template;
+export default Template2;

@@ -1,3 +1,4 @@
+.maroon{
 @page {
     margin: 0;
     padding: 0
@@ -59,14 +60,14 @@
 
 @media print {
     .cv-preview header {
-        background-color: #0d6784!important;
+        background-color: #ee50b9!important;
         -webkit-print-color-adjust: exact;
         margin: 0
     }
 }
 
 .cv-preview header {
-    background-color: #5f0a3f;
+    background-color: #ee50b9;
     padding: 20px 0 40px 6%
 }
 
@@ -113,7 +114,7 @@
 }
 
 .cv-preview .container span.key {
-    width: 130px
+    width: 800px
 }
 
 .cv-preview .container span {
@@ -126,9 +127,9 @@
 
 .cv-preview .container h2 {
     font-size: 15px;
-    color: #5f0a3f;
+    color: #ee50b9;
     font-weight: 400;
-    border-bottom: 1px solid #5f0a3f;
+    border-bottom: 1px solid #ee50b9;
     text-transform: uppercase;
     padding-bottom: 15px;
     line-height: 30px
@@ -138,7 +139,7 @@
     width: 29px;
     font-family: font_cv_preview;
     font-size: 27px;
-    background-color: #5f0a3f;
+    background-color: #ee50b9;
     border-radius: 60px;
     color: #fff;
     margin-right: 14px
@@ -223,7 +224,7 @@
     }
 
     .preview .container span.key {
-        width: 40%
+        width: 100%
     }
 
     .preview header ul li {
@@ -234,4 +235,7 @@
 .keys {
     width: 800px;
 }
-
+.margin_top {
+    margin: 108x 0 0 0;
+}
+}

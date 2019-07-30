@@ -1,9 +1,49 @@
 import React, { Component } from 'react';
-import './PersonalDetails.css';
-import { print_city, print_state } from './../location'
+import './PersonalDetails.scss';
+import iStates from './../../IndianStates.json';
+import iCities from './../../IndianCities.json';
 
 
 class PersonalDetails extends Component {
+
+    indianState() {
+        const optionStates = Object.keys(iStates).map(item => 
+       // console.log(iStates[item].name)
+           <option key={iStates[item].key} value={iStates[item].name}>{iStates[item].name}</option>
+        )
+        return (optionStates)
+    }
+
+    indianCities() {
+        const optionCities = Object.keys(iCities).map(item => {
+             return Object.keys(iCities[item]).map(index => {
+                 return Object.keys(iCities[item][index].districts).map( pos => 
+                     //console.log(iCities[item][index].districts)
+                    <option key={iCities[item][index].districts[pos]} 
+                    value={iCities[item][index].districts[pos]}>
+                    {iCities[item][index].districts[pos]}
+                    </option>
+                 )
+            })
+        })
+        return (optionCities)
+        // const optionCities = Object.keys(iCities).map(item => {
+        //     Object.keys(iCities[item]).map(index =>{
+        //         Object.keys(iCities[item][index].districts).map(values =>
+        //             <option key={iCities[item][index].districts[value]} value={iCities[item][index].districts[value]} >{iCities[item][index].districts[value]}</option>
+        //         ) 
+        //     }
+        //         //console.log(iCities[item][0].districts)
+        //         // <option key={iCities[item][index].districts} value={iCities[item][index].districts} >{iCities[item][index].districts}</option>
+        //         //)
+        //     //<option>{iCities[item][]}</option>
+        // }
+        // //console.log(iCities[item][0].districts)
+        //     //<option key={iStates[item].key} value={iStates[item].key}>{iStates[item].name}</option>
+        // )
+        //console.log(optionCities)
+        
+    }
 
     render() {
         return (
@@ -42,15 +82,26 @@ class PersonalDetails extends Component {
                     </div>
                 </div>
                 <div>
-                    {/*<select onChange={print_city('state', this.selectedIndex)} id="sts" name ="stt" class="form-control" required></select>
-                    <select id ="state" class="form-control" required></select>
-        print_state("sts")*/}
+                    <label>Current Location:</label>
+                    <select className="current_state" onChange={this.props.onValueChanged} value={this.props.currentState}>
+                        <option value="">Select State</option>
+                        {this.indianState()}
+                    </select>
+                    <select className="current_city" onChange={this.props.onValueChanged} value={this.props.currentCity}>
+                        <option value="">Select City</option>
+                        {this.indianCities()}
+                    </select>
                 </div>
                 <div>
                     <label>Hometown:</label>
-                    {/* <select onchange="print_city('h_state', this.selectedIndex);" id="h_sts" name ="h_stt" className="form-control" required onchange="homeStateChange()"><option value="" selected>Selected</option></select>
-                    <select id ="h_state" className="form-control" required onchange="homeCityChange()"><option value="" selected>Selected</option></select>
-                    <script language="javascript">print_state("h_sts");</script> */}
+                    <select className="home_state" onChange={this.props.onValueChanged} value={this.props.HomeState}>
+                        <option value="">Select State</option>
+                        {this.indianState()}
+                    </select>
+                    <select className="home_city" onChange={this.props.onValueChanged} value={this.props.homeCity}>
+                        <option value="">Select City</option>
+                        {this.indianCities()}
+                    </select>
                 </div>
             </div>
         );

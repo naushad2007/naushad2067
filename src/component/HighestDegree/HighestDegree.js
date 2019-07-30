@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './HighestDegree.css';
+import './HighestDegree.scss';
 
 class HighestDegree extends Component {
 

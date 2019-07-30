@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Button.css';
+import './Button.scss';
 
 class Button extends Component {
 
@@ -7,8 +7,8 @@ class Button extends Component {
         return (
             <div>
                 <br/>
-                    <button className='button-shadow button'>Submit</button>
-                    <br/>
+                    <button className='button-shadow button' >Submit</button>
+                <br/>
             </div> 
         );
     }

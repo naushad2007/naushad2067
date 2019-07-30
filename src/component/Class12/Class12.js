@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './Class12.css';
-import './../../App.css';
+import './Class12.scss';
+import './../../App.scss';
 
 class Class12 extends Component {
 

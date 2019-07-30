@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Template.css';
+import './Template.scss';
 
 class Template extends Component {
 
@@ -21,6 +21,8 @@ class Template extends Component {
         this.setState();
     }
 
+    
+
     render() {
         return (
             // <div>
@@ -36,7 +38,7 @@ class Template extends Component {
 
             //     </div>
             // </div>
-            <div id="template">
+            <div id="template" className="margin_top">
 
                 <div className="preview  cv-preview up-margin">
                     <header>
@@ -104,6 +106,11 @@ class Template extends Component {
                                     <span>{this.props.board10}/{this.props.medium10} with {this.props.marks10}% in the year {this.props.year10}</span>
                                     <span>Maths Marks: {this.props.mathsMarks10} EnglishMarks: {this.props.englishMarks10}</span>
                                 </li>
+                                <li>
+                                    <span className="key">Certificate and Courses</span>
+                                    <span>{this.props.certificateCourse},</span>
+                                    <span>Duration: {this.props.courseTimeYear} year(s) and {this.props.courseTimeMonth} month(s)</span>
+                                </li>
                             </ul>
                         </section>
                         <section className="work-details"></section>
@@ -115,11 +122,11 @@ class Template extends Component {
                             <ul>
                                 <li>
                                     <span className="key">Current Location</span>
-                                    <span id="currentLocation"></span>
+                                    <span id="currentLocation">{this.props.currentCity}, {this.props.currentState}</span>
                                 </li>
                                 <li>
                                     <span className="key">HomeTown</span>
-                                    <span id="homeLocation"></span>
+                                    <span id="homeLocation">{this.props.homeCity}, {this.props.homeState}</span>
                                 </li>
                                 <li>
                                     <span className="key">Date of birth:</span>

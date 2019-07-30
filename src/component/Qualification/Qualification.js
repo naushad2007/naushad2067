@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Qualification.css';
+import './Qualification.scss';
 
 class Qualification extends Component {
 

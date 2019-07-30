@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import './Choose.css'
+import './Choose.scss'
 
 class Choose extends Component {
     render() {
@@ -12,11 +12,11 @@ class Choose extends Component {
                 </form> */}
                 <form>
                     <label>
-                    <input type="radio" className="template1 nametemp move-little" value="1" name='radio2' onChange={this.props.onValueChanged}/>Blue Theme Template
+                    <input type="radio" name='radio2' className="template1 nametemp move-little" value="1" onChange={this.props.onValueChanged}/>Blue Theme Template
                     </label>
                     <br/>
                     <label>
-                    <input type="radio" className="template2 nametemp move-a-little-more" value="2" name='radio2' onChange={this.props.onValueChanged}/>Maroon Theme Template
+                    <input type="radio" name='radio2' className="template2 nametemp" value="2" onChange={this.props.onValueChanged}/>Pink Theme Template
                     </label>
                 </form>
             </div>

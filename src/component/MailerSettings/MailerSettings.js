@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './MailerSettings.css';
+import './MailerSettings.scss';
 
 class MailerSettings extends Component {
 

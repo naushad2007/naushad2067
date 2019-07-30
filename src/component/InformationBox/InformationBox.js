@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './InformationBox.css';
+import './InformationBox.scss';
 
 class InformationBox extends Component {
 

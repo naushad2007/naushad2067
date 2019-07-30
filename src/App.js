@@ -1,4 +1,4 @@
-import './App.css'
+import './App.scss'
 import React, { Component } from 'react';
 import Header from './component/Header/Header';
 import Footer from './component/Footer/Footer';
@@ -16,6 +16,7 @@ import Button from './component/Button/Button';
 import { qualifiedTypeIdentifier } from '@babel/types';
 import Template2 from './component/Template/Template2';
 import Choose from './component/Choose/Choose';
+import DownloadButton from './../src/component/DownloadButton/DownloadButton';
 
 
 class App extends Component {
@@ -102,13 +103,16 @@ class App extends Component {
 
       nameQualification: '',
       nameClass: '',
-      template1isHidden: false,
+      template1isHidden: true,
       template2isHidden: true,
 
 
       docisHidden: true,
       pgisHidden: true,
-      ugisHidden: false
+      ugisHidden: false,
+      joiningDateisHidden: false,
+
+      printPDF: false
     };
 
     this.onValueChanged = this.onValueChanged.bind(this);
@@ -225,7 +229,22 @@ class App extends Component {
       console.log(event.target.value);
       this.setState({template1isHidden:true});
       this.setState({template2isHidden:false});
-    } 
+    } else if(event.target.classList.contains('button')) {
+      console.log(event.target.value);
+      this.setState({printPDF:!event.target.value});
+    } else if(event.target.classList.contains('current_state')) {
+      console.log(event.target.value);
+      this.setState({currentState:event.target.value});
+    } else if(event.target.classList.contains('current_city')) {
+      console.log(event.target.value);
+      this.setState({currentCity:event.target.value});
+    } else if(event.target.classList.contains('home_state')) {
+      console.log(event.target.value);
+      this.setState({homeState:event.target.value});
+    } else if(event.target.classList.contains('home_city')) {
+      console.log(event.target.value);
+      this.setState({homeCity:event.target.value});
+    }
   }
 
   onValueChangedDOC(event) {
@@ -423,6 +442,7 @@ class App extends Component {
             <Choose nameTemplate={this.state.nameTemplate}  onValueChanged={this.onValueChanged} />
             {!this.state.template1isHidden && <Template {...this.state}/>}
             {!this.state.template2isHidden && <Template2 {...this.state}/>}
+            <DownloadButton/>
           </div>
         </div>
         <Footer/>
