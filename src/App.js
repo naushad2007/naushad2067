@@ -442,7 +442,7 @@ class App extends Component {
             <Choose nameTemplate={this.state.nameTemplate}  onValueChanged={this.onValueChanged} />
             {!this.state.template1isHidden && <Template {...this.state}/>}
             {!this.state.template2isHidden && <Template2 {...this.state}/>}
-            <DownloadButton/>
+            {/* <DownloadButton/> */}
           </div>
         </div>
         <Footer/>

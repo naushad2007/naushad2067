@@ -6,7 +6,7 @@ class DownloadButton extends Component {
         return (
             <div>
                 <br/>
-                    <button className='button-shadow button' >Download Resume</button>
+                    <button onClick={this.props.onclick} className='button-shadow button' >Download Resume</button>
                 <br/>
             </div>
         );

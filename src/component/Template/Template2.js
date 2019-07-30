@@ -1,8 +1,15 @@
 import React, { Component } from 'react';
 import './Template2.scss';//use context API
+import DownloadButton from '../DownloadButton/DownloadButton';
 
 class Template2 extends Component {
 
+    constructor(props){
+        super(props);
+        this.content = React.createRef();
+        //console.log(jsPDF);
+        this.printResume=this.printResume.bind(this);
+    }
 
     quali() {
         if(this.props.highestDegree === 'Doctorate') {
@@ -19,6 +26,19 @@ class Template2 extends Component {
             this.setState({ugisHidden:false});
         }
         this.setState();
+    }
+
+    printResume() {
+        console.log("here");
+        let title="Resume";
+        var divContents = this.content.current.innerHTML;
+        var printWindow = window.open('', '', 'height=500,width=700');
+        printWindow.document.write(`<html><head><title>${title}</title>`);
+        printWindow.document.write('</head><body>');
+        printWindow.document.write(divContents);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.print();
     }
 
     // imme() {
@@ -49,7 +69,7 @@ class Template2 extends Component {
             // </div>
             <div id="template" className="maroon margin_top">
 
-                <div id="HTMLtoPDF" className="preview  cv-preview up-margin">
+                <div ref={this.content} id="content" className="preview  cv-preview up-margin">
                     <header>
                         <h1 id="name">{this.props.name}</h1>
                         <ul>
@@ -162,6 +182,9 @@ class Template2 extends Component {
                         </section>
                     </div>
                 </div>
+                <div id="editor"></div>
+
+                <DownloadButton onclick={this.printResume} />
             </div>
 
         );
