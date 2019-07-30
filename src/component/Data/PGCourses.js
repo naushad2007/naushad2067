@@ -1,0 +1,32 @@
+const pg_courses = {
+        "20": "CA",
+        "21": "CS",
+        "22": "ICWA",
+        "23": "LLM",
+        "24": "M.A. ",
+        "25": "M.Arch",
+        "26": "M.Com",
+        "27": "M.D.",
+        "28": "M.Des",
+        "29": "M.E. / M.Tech",
+        "30": "M.Ed",
+        "31": "M.Ekistics",
+        "32": "M.Pharma",
+        "33": "M.Phil",
+        "34": "M.Sc",
+        "35": "M.Tourism",
+        "36": "MBA / PGDM / MMS",
+        "37": "MCA",
+        "38": "MDS",
+        "39": "MFA",
+        "40": "MHM",
+        "41": "MJMC",
+        "42": "MVSc",
+        "43": "PG Diploma",
+        "44": "MBE",
+        "45": "MSW",
+        "46": "MCM",
+        "47": "Other"
+}
+
+export default pg_courses;

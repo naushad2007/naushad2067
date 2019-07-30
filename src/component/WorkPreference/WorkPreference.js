@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './WorkPreference.scss';
+import displayWorkLocation from './../../Helper/DisplayWorkLocation';
 
 class WorkPreference extends Component {
 
@@ -61,15 +62,12 @@ class WorkPreference extends Component {
                 <label className="pre_loc">Prefered Location:</label>
                 <br></br>
                     <select className="location slocation" size="4" id="prefered_location" onChange={this.props.onValueChanged} value={this.props.workingLocation}>
-                        <option value="Anywhere in India">Anywhere in India</option>
-                        <option value="West India">West India</option>
-                        <option value="East India">East India</option>
-                        <option value="South India">South India</option>
-                        <option value="North India">North India</option>
-                        <option value="Gulf Region">Gulf Region</option>
-                        <option value="Abroad">Abroad</option>
+                        {displayWorkLocation()}
                         {/*--TODO: checkbox inside select--*/}
                     </select>
+                    {/* <link href="./../../Plugins/multiselect.css" rel="stylesheet"/>
+	                <script src="./../../Plugins/multiselect.min.js"></script>
+                    {document.multiselect('#prefered_location')} */}
                     <p className='p-instruction'>You may select up to 10 locations. The locations specified will be used to filter jobs matching your profile</p>
                 </div>
             </div>

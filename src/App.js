@@ -17,6 +17,7 @@ import { qualifiedTypeIdentifier } from '@babel/types';
 import Template2 from './component/Template/Template2';
 import Choose from './component/Choose/Choose';
 import DownloadButton from './../src/component/DownloadButton/DownloadButton';
+//import { displayPGCourses } from './Helper/DisplayPGCourses';
 
 
 class App extends Component {
@@ -125,6 +126,7 @@ class App extends Component {
   
   componentDidMount(){
   }
+
 
   onValueChanged(event){
     if(event.target.classList.contains('email')){

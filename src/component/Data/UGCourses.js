@@ -1,3 +1,4 @@
+      const ug_courses = {
         "1": "B .Com ",
         "2": "B.A.",
         "3": "B.Arch",
@@ -18,3 +19,6 @@
         "18": "LLB",
         "19": "MBBS",
         "99999": "Other"
+        }
+
+      export default ug_courses;

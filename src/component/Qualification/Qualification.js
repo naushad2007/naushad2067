@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import './Qualification.scss';
+import App from '../../App';
+import displayPGCourses from '../../Helper/DisplayPGCourses';
+import displayUGCourses from '../../Helper/DisplayUGCourses';
+import displayDOCCourses from '../../Helper/DisplayDOCCourses';
 
 class Qualification extends Component {
 
@@ -36,6 +40,9 @@ class Qualification extends Component {
                         <option value="Ph.D/Doctorate">Ph.D/Doctorate</option>
                         <option value="MPHIL">MPHIL</option>
                         <option value="Other">Other</option>
+                        {displayDOCCourses()}
+                        {displayPGCourses()}
+                        {displayUGCourses()}
                     </select>
                 </div>
 
@@ -46,6 +53,7 @@ class Qualification extends Component {
                         <option value='Medicine' name=''>Medicine</option>
                         <option value='Machanical' name=''>Machanical</option>
                         <option value='Information Technology' name=''>Information Technology</option>
+                        
                         {/*TODO: Add specilaziation from js*/}
                     </select>
                 </div>

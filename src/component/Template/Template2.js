@@ -29,7 +29,6 @@ class Template2 extends Component {
     }
 
     printResume() {
-        console.log("here");
         let title="Resume";
         var divContents = this.content.current.innerHTML;
         var printWindow = window.open('', '', 'height=500,width=700');
@@ -40,6 +39,16 @@ class Template2 extends Component {
         printWindow.document.close();
         printWindow.print();
     }
+
+    // printResume() {
+    //     var content = document.getElementById("content");
+    //     var pri = document.getElementById("ifmcontentstoprint").contentWindow;
+    //     pri.document.open();
+    //     pri.document.write(content.innerHTML);
+    //     pri.document.close();
+    //     pri.focus();
+    //     pri.print();
+    // }
 
     // imme() {
     //     if(this.props.workingDate === "Immediately") {
@@ -68,7 +77,7 @@ class Template2 extends Component {
             //     </div>
             // </div>
             <div id="template" className="maroon margin_top">
-
+                <button onClick={() => window.print()}>PRINT</button>
                 <div ref={this.content} id="content" className="preview  cv-preview up-margin">
                     <header>
                         <h1 id="name">{this.props.name}</h1>
@@ -182,8 +191,8 @@ class Template2 extends Component {
                         </section>
                     </div>
                 </div>
-                <div id="editor"></div>
-
+                
+                {/* <iframe id="ifmcontentstoprint" ></iframe> */}
                 <DownloadButton onclick={this.printResume} />
             </div>
 
