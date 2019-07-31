@@ -426,7 +426,7 @@ class App extends Component {
           <Header/>
         <div className="body">
           <div className="left-sec">
-            <InformationBox/>
+            {/* <InformationBox/> */}
             <LoginDetails state={this.state} onValueChanged={this.onValueChanged} />
             <HighestDegree state={this.state} onValueChanged={this.onValueChanged}/>
             {!this.state.docisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedDOC} nameQualification={"Doctorate"}/>}

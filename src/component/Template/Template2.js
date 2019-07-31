@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import './Template2.scss';//use context API
-import DownloadButton from '../DownloadButton/DownloadButton';
+//import DownloadButton from '../DownloadButton/DownloadButton';
+// import html2canvas from 'html2canvas';
+// import jsPDF from 'jspdf';
+  
 
 class Template2 extends Component {
 
     constructor(props){
         super(props);
-        this.content = React.createRef();
+        //this.content = React.createRef();
         //console.log(jsPDF);
-        this.printResume=this.printResume.bind(this);
+        //this.printResume=this.printResume.bind(this);
     }
 
     quali() {
@@ -28,17 +31,72 @@ class Template2 extends Component {
         this.setState();
     }
 
-    printResume() {
-        let title="Resume";
-        var divContents = this.content.current.innerHTML;
-        var printWindow = window.open('', '', 'height=500,width=700');
-        printWindow.document.write(`<html><head><title>${title}</title>`);
-        printWindow.document.write('</head><body>');
-        printWindow.document.write(divContents);
-        printWindow.document.write('</body></html>');
-        printWindow.document.close();
-        printWindow.print();
-    }
+    // printResume() {
+    //     const input = document.querySelector("#content");
+    //     html2canvas(input).then((canvas) => {
+    //     const imgData = canvas.toDataURL('image/png');
+    //     const pdf = new jsPDF();
+    //     pdf.addImage(imgData, 'JPEG', 0, 0);
+    //     // pdf.output('dataurlnewwindow');
+    //     pdf.save("download.pdf");
+    //   })
+    // ;
+    // }
+
+    // printResume() {
+    //     const input = document.querySelector("#content");
+    //     html2canvas(input)
+    //     .then((canvas) => {
+    //       const imgData = canvas.toDataURL('image/png');
+          
+    //       const pdf = new jsPDF();
+          
+    //       pdf.addImage(imgData, 'PNG', 0, 0);
+    //       pdf.save("resume.pdf");
+    //     });
+    //   ;
+    // }
+
+    
+
+//     printResume() {
+//         html2canvas(document.querySelector("#content")).then(function(canvas) {
+//             document.body.appendChild(canvas);
+
+//         html2canvas(document.querySelector("#content")).then((canvas) => {
+//             const imgData = canvas.toDataURL('image/png');
+
+//         const input = document.getElementById('divIdToPrint');
+// ;
+//         const pdf = new jsPDF();
+//         pdf.addImage(imgData, 'PNG', 0, 0);
+//         pdf.save("download.pdf");  
+//         });
+//     }
+
+    // printResume() {
+    //     html2canvas(document.querySelector("#content")).then(function(canvas) {
+    //         document.body.appendChild(canvas);
+    //     });
+    //     html2canvas(input).then((canvas) => {
+    //     const imgData = canvas.toDataURL('image/png');
+    //     const pdf = new jsPDF();
+    //     pdf.addImage(imgData, 'PNG', 0, 0);
+    //     pdf.save("download.pdf");  
+    //     });
+    // }
+
+    // printResume() {
+    //     let title="Resume";
+    //     var divContents = this.content.current.innerHTML;
+    //     var printWindow = window.open('', '', 'height=500,width=700');
+    //     printWindow.document.write(`<html><head><title>${title}</title>`);
+    //     printWindow.document.write('</head><body>');
+    //     printWindow.document.write(divContents);
+    //     printWindow.document.write('</body></html>');
+    //     printWindow.document.close();
+    //     printWindow.print();
+    // }
 
     // printResume() {
     //     var content = document.getElementById("content");
@@ -77,8 +135,9 @@ class Template2 extends Component {
             //     </div>
             // </div>
             <div id="template" className="maroon margin_top">
-                <button onClick={() => window.print()}>PRINT</button>
-                <div ref={this.content} id="content" className="preview  cv-preview up-margin">
+                {/* <button onClick={() => window.print()}>PRINT</button> */}
+                {/* <div ref={this.content} id="content" className="preview  cv-preview up-margin"> */}
+                <div id="content" className="preview  cv-preview up-margin">
                     <header>
                         <h1 id="name">{this.props.name}</h1>
                         <ul>
@@ -191,9 +250,6 @@ class Template2 extends Component {
                         </section>
                     </div>
                 </div>
-                
-                {/* <iframe id="ifmcontentstoprint" ></iframe> */}
-                <DownloadButton onclick={this.printResume} />
             </div>
 
         );
