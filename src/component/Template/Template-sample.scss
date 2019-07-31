@@ -1,3 +1,27 @@
+@font-face {
+    font-family: font_cv_preview;
+    src: url(../fonts/font_cv_preview.eot);
+    src: url(../fonts/font_cv_preview.eot?#iefix) format("embedded-opentype"),url(../fonts/font_cv_preview.woff2) format("woff2"),url(../fonts/font_cv_preview.woff) format("woff"),url(../fonts/font_cv_preview.ttf) format("truetype"),url(../fonts/font_cv_preview.svg#font_cv_preview) format("svg");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 300;
+    src: local("Roboto Light"),local("Roboto-Light"),local("sans-serif-light"),url(../fonts/roboto300.woff2) format("woff2"),url(../roboto300.woff) format("woff"),url(https://fonts.gstatic.com/s/roboto/v15/Hgo13k-tfSpn0qi1SFdUfaCWcynf_cDxXwCLxiixG1c.ttf) format("truetype");
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000
+}
+
+@font-face {
+    font-family: roboto;
+    font-style: normal;
+    font-weight: 400;
+    src: local("Roboto"),local("Roboto-Regular"),local("sans-serif"),url(../fonts/roboto400.woff2) format("woff2"),url(../fonts/roboto400.woff) format("woff"),url(https://fonts.gstatic.com/s/roboto/v15/zN7GBFwfMP4uA6AR0HCoLQ.ttf) format("truetype");
+    unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2212,U+2215,U+E0FF,U+EFFD,U+F000
+}
+
 @page {
     margin: 0;
     padding: 0
@@ -12,17 +36,11 @@
     }
 }
 
-$font-temp: Arial;
-
-.template {
-    font-family: $font-temp;
-}
-
 .cv-preview {
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
-    font-family: $font-temp
+    font-family: Arial,sans-serif
 }
 
 .cv-preview ul {
@@ -65,14 +83,14 @@ $font-temp: Arial;
 
 @media print {
     .cv-preview header {
-        background-color: rgb(51, 51, 255)!important;
+        background-color: #0d6784!important;
         -webkit-print-color-adjust: exact;
         margin: 0
     }
 }
 
 .cv-preview header {
-    background-color: rgb(51, 51, 255);
+    background-color: #0d6784;
     padding: 20px 0 40px 6%
 }
 
@@ -90,13 +108,13 @@ $font-temp: Arial;
 }
 
 .cv-preview header ul li .call,.cv-preview header ul li .post {
-    font-family: $font-temp;
+    font-family: font_cv_preview;
     font-size: 27px;
     color: #fff;
     margin-right: 5px;
     padding: 0;
     border: 1px solid #fff;
-    //border-radius: 40px
+    border-radius: 40px
 }
 
 .cv-preview header ul li .post {
@@ -119,7 +137,7 @@ $font-temp: Arial;
 }
 
 .cv-preview .container span.key {
-    width: 300px
+    width: 130px
 }
 
 .cv-preview .container span {
@@ -132,20 +150,19 @@ $font-temp: Arial;
 
 .cv-preview .container h2 {
     font-size: 15px;
-    color: rgb(51, 51, 255);
+    color: #0d6784;
     font-weight: 400;
-    border-bottom: 1px solid rgb(51, 51, 255);
+    border-bottom: 1px solid #558fa3;
     text-transform: uppercase;
     padding-bottom: 15px;
     line-height: 30px
 }
 
 .cv-preview .container h2 .edudetails,.cv-preview .container h2 .pdetails,.cv-preview .container h2 .prjtdetails,.cv-preview .container h2 .sdetails,.cv-preview .container h2 .wdetails,.cv-preview .container h2 .wexpernce {
-    width: 25px;
-    height: 25px;
-    font-family: $font-temp;
+    width: 29px;
+    font-family: font_cv_preview;
     font-size: 27px;
-    background-color: rgb(51, 51, 255);
+    background-color: #0d6784;
     border-radius: 60px;
     color: #fff;
     margin-right: 14px
@@ -186,7 +203,7 @@ $font-temp: Arial;
 }
 
 .preview header h1,.preview header ul li span {
-    font-family: $font-temp
+    font-family: roboto
 }
 
 .preview .container {
@@ -198,7 +215,7 @@ $font-temp: Arial;
 }
 
 .preview .container h2,.preview .container span {
-    font-family: $font-temp
+    font-family: roboto
 }
 
 .resume-sample-wrapper {
@@ -206,7 +223,7 @@ $font-temp: Arial;
 }
 
 .resume-sample-wrapper p {
-    font-family: $font-temp;
+    font-family: roboto;
     font-size: 1.4em;
     padding: 30px 0 20px
 }
@@ -230,38 +247,10 @@ $font-temp: Arial;
     }
 
     .preview .container span.key {
-        width: 100%
+        width: 40%
     }
 
     .preview header ul li {
         margin-top: 6px
     }
 }
-
-.keys {
-    width: 300px;
-}
-
-.margin_top {
-    margin: 108px 0 0 0;
-}
-.circle_white {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    background: #eee;
-}
-
-.circle_blue {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-    display: inline-block;
-    background: rgb(51, 51, 255);
-}
-
-.label_bold {
-    font-weight: bold;
-}
-

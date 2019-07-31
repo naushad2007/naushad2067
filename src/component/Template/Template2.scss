@@ -1,9 +1,12 @@
+$font-temp: Arial;
+$theme: rgb(180, 59, 204);
 .maroon{
 
 *{
     margin: 0;
     padding: 0;
 }
+
 
 @media print {
     body {
@@ -12,8 +15,12 @@
         width: 100%;
         max-width: 1080px;
         margin: 0 auto;
-        font-family: Arial,sans-serif
+        font-family: $font-temp;
     }
+    
+    .template {
+    font-family: $font-temp;
+}
     
     .cv-preview ul {
         margin: 0;
@@ -78,7 +85,7 @@
     }
     
     .cv-preview header ul li .call,.cv-preview header ul li .post {
-        font-family: font_cv_preview;
+        font-family: $font-temp;
         font-size: 27px;
         color: #fff;
         margin-right: 5px;
@@ -130,7 +137,7 @@
     
     .cv-preview .container h2 .edudetails,.cv-preview .container h2 .pdetails,.cv-preview .container h2 .prjtdetails,.cv-preview .container h2 .sdetails,.cv-preview .container h2 .wdetails,.cv-preview .container h2 .wexpernce {
         width: 29px;
-        font-family: font_cv_preview;
+        font-family: $font-temp;
         font-size: 27px;
         background-color: #ee50b9;
         border-radius: 60px;
@@ -173,7 +180,7 @@
     }
     
     .preview header h1,.preview header ul li span {
-        font-family: roboto
+        font-family: $font-temp;
     }
     
     .preview .container {
@@ -185,7 +192,7 @@
     }
     
     .preview .container h2,.preview .container span {
-        font-family: roboto
+        font-family: $font-temp;
     }
     
     .resume-sample-wrapper {
@@ -193,7 +200,7 @@
     }
     
     .resume-sample-wrapper p {
-        font-family: roboto;
+        font-family: $font-temp;
         font-size: 1.4em;
         padding: 30px 0 20px
     }
@@ -236,7 +243,7 @@
     width: 100%;
     max-width: 1080px;
     margin: 0 auto;
-    font-family: Arial,sans-serif
+    font-family: $font-temp;
 }
 
 .cv-preview ul {
@@ -304,7 +311,7 @@
 }
 
 .cv-preview header ul li .call,.cv-preview header ul li .post {
-    font-family: font_cv_preview;
+    font-family: $font-temp;
     font-size: 27px;
     color: #fff;
     margin-right: 5px;
@@ -355,8 +362,9 @@
 }
 
 .cv-preview .container h2 .edudetails,.cv-preview .container h2 .pdetails,.cv-preview .container h2 .prjtdetails,.cv-preview .container h2 .sdetails,.cv-preview .container h2 .wdetails,.cv-preview .container h2 .wexpernce {
-    width: 29px;
-    font-family: font_cv_preview;
+    width: 25px;
+    height: 25px;
+    font-family: $font-temp;
     font-size: 27px;
     background-color: #ee50b9;
     border-radius: 60px;
@@ -399,7 +407,7 @@
 }
 
 .preview header h1,.preview header ul li span {
-    font-family: roboto
+    font-family: $font-temp;
 }
 
 .preview .container {
@@ -411,7 +419,7 @@
 }
 
 .preview .container h2,.preview .container span {
-    font-family: roboto
+    font-family: $font-temp;
 }
 
 .resume-sample-wrapper {
@@ -419,7 +427,7 @@
 }
 
 .resume-sample-wrapper p {
-    font-family: roboto;
+    font-family: $font-temp;
     font-size: 1.4em;
     padding: 30px 0 20px
 }
@@ -457,4 +465,24 @@
 .margin_top {
     margin: 108x 0 0 0;
 }
+.circle_white {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #eee;
 }
+
+.circle_pink {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    background: #ee50b9;
+}
+
+.label_bold {
+    font-weight: bold;
+}
+}
+
