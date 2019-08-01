@@ -11,13 +11,15 @@ import PersonalDetails from './component/PersonalDetails/PersonalDetails';
 import Qualification from './component/Qualification/Qualification';
 import WorkPreference from './component/WorkPreference/WorkPreference';
 import InformationBox from './component/InformationBox/InformationBox';
-import Template from './component/Template/Template';
+import Template from './component/Template/Template1/Template';
 import Button from './component/Button/Button';
 import { qualifiedTypeIdentifier } from '@babel/types';
-import Template2 from './component/Template/Template2';
+import Template2 from './component/Template/Template2/Template2';
 import Choose from './component/Choose/Choose';
 import DownloadButton from './../src/component/DownloadButton/DownloadButton';
 //import { displayPGCourses } from './Helper/DisplayPGCourses';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 
 class App extends Component {
@@ -174,14 +176,18 @@ class App extends Component {
       this.setState({workingType:"Internship"});
     } else if(event.target.classList.contains('wp_immediately')) {
       console.log(event.target.value);
+      this.setState({workingMonth:""});
+      this.setState({workingYear:""});
       this.setState({workingDate:"Immediately"});
     } else if(event.target.classList.contains('wp_provide_time')) {
       console.log(event.target.value);
       this.setState({workingDate:"From"});
     } else if(event.target.classList.contains('wp_joining_year')) {
+      this.setState({workingDate:"From"});
       console.log(event.target.value);
       this.setState({workingMonth:event.target.value});
     } else if(event.target.classList.contains('wp_joining_month')) {
+      this.setState({workingDate:"From"});
       console.log(event.target.value);
       this.setState({workingYear:event.target.value});
     } else if(event.target.classList.contains('location')) {
@@ -418,6 +424,19 @@ class App extends Component {
   //   }
   // }
 
+  printResume() {
+    console.log("start of printResume");
+    const qinput = document.querySelector("#print_content");
+
+    html2canvas(qinput).then((canvas) => {
+        const imgData = canvas.toDataURL('image/png');
+        const pdf = new jsPDF();
+        pdf.addImage(imgData, 'JPEG', 0, 0);
+        pdf.save("download.pdf");
+    });
+    console.log("end of printResume");
+}
+
 
   render() {
 
@@ -427,7 +446,7 @@ class App extends Component {
         <div className="body">
           <div className="left-sec">
             {/* <InformationBox/> */}
-            <LoginDetails state={this.state} onValueChanged={this.onValueChanged} />
+            <LoginDetails state={this.state} onValueChanged={this.onValueChanged} id="print_login"/>
             <HighestDegree state={this.state} onValueChanged={this.onValueChanged}/>
             {!this.state.docisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedDOC} nameQualification={"Doctorate"}/>}
             {!this.state.pgisHidden && <Qualification state={this.state} onValueChanged={this.onValueChangedPG} nameQualification={"Post Graduation / Masters Degree or Equivilant"}/>}
@@ -442,6 +461,7 @@ class App extends Component {
           </div>
           <div className="right-sec">
             <Choose nameTemplate={this.state.nameTemplate}  onValueChanged={this.onValueChanged} />
+            <DownloadButton onclick={this.printResume} />
             {!this.state.template1isHidden && <Template {...this.state}/>}
             {!this.state.template2isHidden && <Template2 {...this.state}/>}
             {/* <DownloadButton/> */}

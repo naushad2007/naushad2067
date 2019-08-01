@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
-import './Template.scss';
+import './Template.scss';//use context API
+import DownloadButton from '../../DownloadButton/DownloadButton';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
 
 class Template extends Component {
-
+    constructor(props){
+        super(props);
+        this.printResume = this.printResume.bind(this);
+    }
 
     quali() {
         if(this.props.highestDegree === 'Doctorate') {
@@ -21,6 +27,18 @@ class Template extends Component {
         this.setState();
     }
 
+    printResume() {
+        console.log("start of printResume");
+        const qinput = document.querySelector("#print_content");
+    
+        html2canvas(qinput).then((canvas) => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'JPEG', 0, 0);
+            pdf.save("download.pdf");
+        });
+        console.log("end of printResume");
+    }
     
 
     render() {
@@ -38,9 +56,9 @@ class Template extends Component {
 
             //     </div>
             // </div>
-            <div id="template" className="margin_top">
-
-                <div className="preview  cv-preview up-margin">
+            <div id="template" className="margin_top blue">
+                {/* <DownloadButton onclick={this.printResume}/> */}
+                <div className="preview  cv-preview up-margin" id="print_content">
                     <header>
                         <h1 id="name">{this.props.name}</h1>
                         <ul>

@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import './Template2.scss';//use context API
-//import DownloadButton from '../DownloadButton/DownloadButton';
-// import html2canvas from 'html2canvas';
-// import jsPDF from 'jspdf';
+import DownloadButton from '../../DownloadButton/DownloadButton';
+import html2canvas from 'html2canvas';
+import jsPDF from 'jspdf';
+
   
 
 class Template2 extends Component {
 
     constructor(props){
         super(props);
-        //this.content = React.createRef();
-        //console.log(jsPDF);
-        //this.printResume=this.printResume.bind(this);
+        this.printResume = this.printResume.bind(this);
     }
 
     quali() {
@@ -31,9 +30,67 @@ class Template2 extends Component {
         this.setState();
     }
 
+    printResume() {
+        console.log("start of printResume");
+        const qinput = document.querySelector("#print_content");
+    
+        html2canvas(qinput).then((canvas) => {
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            pdf.addImage(imgData, 'JPEG', 0, 0);
+            pdf.save("download.pdf");
+        });
+        console.log("end of printResume");
+    }
+
+    // startPrintProcess(canvasObj, fileName, callback) {
+    //     console.log("inside startPrintProcess");
+    //     var pdf = new jsPDF('p', 'pt', 'a4'),
+    //       pdfConf = {
+    //         pagesplit: false,
+    //         background: '#fff'
+    //       };
+    //     document.body.appendChild(canvasObj); //appendChild is required for html to add page in pdf
+    //     pdf.addHTML(canvasObj, 0, 0, pdfConf, function() {
+    //       document.body.removeChilbd(canvasObj);
+    //       pdf.addPage();
+    //       pdf.save(fileName + '.pdf');
+    //       callback();
+    //     });
+    //   }
+
+
     // printResume() {
-    //     const input = document.querySelector("#content");
-    //     html2canvas(input).then((canvas) => {
+    //     console.log("inside printResume");
+    //     html2canvas(document.getElementById('print_content'), {
+    //         onrendered: function(canvasObj) {
+    //             console.log("end insider");
+    //           this.startPrintProcess(canvasObj, 'printedPDF',function (){
+    //             alert('PDF saved');
+    //           })
+    //           //save this object to the pdf
+    //         }
+    //       });
+    //       console.log("end inside printResume");
+    // }
+
+    // printResume() {
+    //     console.log("start of printResume");
+    //     const qinput = document.querySelector("#print_content");
+
+    //     html2canvas(qinput).then((canvas) => {
+    //         const imgData = canvas.toDataURL('image/png');
+    //         const pdf = new jsPDF();
+    //         pdf.addImage(imgData, 'JPEG', 0, 0);
+    //         pdf.save("download.pdf");
+    //     });
+    //     console.log("end of printResume");
+    // }
+
+    // printResume() {
+    //     const input = document.getElementById('divToPrint');
+    //     html2canvas(input)
+    //     .then((canvas) => {
     //     const imgData = canvas.toDataURL('image/png');
     //     const pdf = new jsPDF();
     //     pdf.addImage(imgData, 'JPEG', 0, 0);
@@ -133,11 +190,10 @@ class Template2 extends Component {
             //     <div className="body">
 
             //     </div>
-            // </div>
-            <div id="template" className="maroon margin_top">
-                {/* <button onClick={() => window.print()}>PRINT</button> */}
-                {/* <div ref={this.content} id="content" className="preview  cv-preview up-margin"> */}
-                <div id="content" className="preview  cv-preview up-margin">
+            // </div>   
+            <div id="template" className="maroon">
+                {/* <DownloadButton onclick={this.printResume}/> */}
+                <div id="print_content" className="preview  cv-preview up-margin">
                     <header>
                         <h1 id="name">{this.props.name}</h1>
                         <ul>
@@ -151,7 +207,7 @@ class Template2 extends Component {
                             </li>
                         </ul>
                     </header>
-                    <div className="container">
+                    <div className="container" id="resumePrint">
                         <section className="edu-details">
                             <h2>
                                 <span className="edudetails circle_pink"></span>
@@ -251,7 +307,6 @@ class Template2 extends Component {
                     </div>
                 </div>
             </div>
-
         );
     }
 }

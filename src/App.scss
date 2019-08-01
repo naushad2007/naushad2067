@@ -412,6 +412,7 @@ label {
   display: inline-block;
   width: 27%;
   text-align-last: right;
+  font-weight: bold;
 }
 
 .border-box {
@@ -446,4 +447,7 @@ label {
 
 .align-left {
   text-align-last: left;
+}
+.hr-solid {
+  border: 0.07rem solid lightseagreen;
 }

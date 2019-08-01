@@ -11,7 +11,7 @@ class Qualification extends Component {
         return (
             <div className="border-box">
                 <div>
-                    <p>Degree: {this.props.nameQualification}</p>
+                    <p className="quali-font">Degree: {this.props.nameQualification}</p>
                     <div>
                         <form>
                             <label>
