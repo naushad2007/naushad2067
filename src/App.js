@@ -461,10 +461,9 @@ class App extends Component {
           </div>
           <div className="right-sec">
             <Choose nameTemplate={this.state.nameTemplate}  onValueChanged={this.onValueChanged} />
-            <DownloadButton onclick={this.printResume} />
+            {(!this.state.template1isHidden || !this.state.template2isHidden) && <DownloadButton onclick={this.printResume} />}
             {!this.state.template1isHidden && <Template {...this.state}/>}
             {!this.state.template2isHidden && <Template2 {...this.state}/>}
-            {/* <DownloadButton/> */}
           </div>
         </div>
         <Footer/>
