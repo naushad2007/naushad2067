@@ -1,3 +1,4 @@
+$themex: rgb(0, 0, 61);
 .blue {
     @page {
         margin: 0;
@@ -66,14 +67,14 @@
     
     @media print {
         .cv-preview header {
-            background-color: rgb(51, 51, 255)!important;
+            background-color: $themex!important;
             -webkit-print-color-adjust: exact;
             margin: 0
         }
     }
     
     .cv-preview header {
-        background-color: rgb(51, 51, 255);
+        background-color: $themex;
         padding: 20px 0 40px 6%
     }
     
@@ -133,9 +134,9 @@
     
     .cv-preview .container h2 {
         font-size: 15px;
-        color: rgb(51, 51, 255);
+        color: $themex;
         font-weight: 400;
-        border-bottom: 1px solid rgb(51, 51, 255);
+        border-bottom: 1px solid $themex;
         text-transform: uppercase;
         padding-bottom: 15px;
         line-height: 30px
@@ -146,7 +147,7 @@
         height: 25px;
         font-family: $font-temp;
         font-size: 27px;
-        background-color: rgb(51, 51, 255);
+        background-color: $themex;
         border-radius: 60px;
         color: #fff;
         margin-right: 14px
@@ -256,7 +257,7 @@
         width: 20px;
         border-radius: 50%;
         display: inline-block;
-        background: rgb(51, 51, 255);
+        background: $themex;
     }
     
     .label_bold {

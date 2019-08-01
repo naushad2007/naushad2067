@@ -1,5 +1,5 @@
 $font-temp: Arial;
-$theme: rgb(180, 59, 204);
+$theme: rgb(126, 0, 78);
 .maroon{
 
 *{
@@ -61,13 +61,13 @@ $theme: rgb(180, 59, 204);
     }
     
     .cv-preview header {
-        background-color: #ee50b9!important;
+        background-color: $theme!important;
         -webkit-print-color-adjust: exact;
         margin: 0
     }
     
     .cv-preview header {
-        background-color: #ee50b9;
+        background-color: $theme;
         padding: 20px 0 40px 6%
     }
     
@@ -127,9 +127,9 @@ $theme: rgb(180, 59, 204);
     
     .cv-preview .container h2 {
         font-size: 15px;
-        color: #ee50b9;
+        color: $theme;
         font-weight: 400;
-        border-bottom: 1px solid #ee50b9;
+        border-bottom: 1px solid $theme;
         text-transform: uppercase;
         padding-bottom: 15px;
         line-height: 30px
@@ -139,7 +139,7 @@ $theme: rgb(180, 59, 204);
         width: 29px;
         font-family: $font-temp;
         font-size: 27px;
-        background-color: #ee50b9;
+        background-color: $theme;
         border-radius: 60px;
         color: #fff;
         margin-right: 14px
@@ -284,14 +284,14 @@ $theme: rgb(180, 59, 204);
 
 // @media print {
 //     .cv-preview header {
-//         background-color: #ee50b9!important;
+//         background-color: $theme!important;
 //         -webkit-print-color-adjust: exact;
 //         margin: 0
 //     }
 // }
 
 .cv-preview header {
-    background-color: #ee50b9;
+    background-color: $theme;
     padding: 20px 0 40px 6%
 }
 
@@ -351,9 +351,9 @@ $theme: rgb(180, 59, 204);
 
 .cv-preview .container h2 {
     font-size: 15px;
-    color: #ee50b9;
+    color: $theme;
     font-weight: 400;
-    border-bottom: 1px solid #ee50b9;
+    border-bottom: 1px solid $theme;
     text-transform: uppercase;
     padding-bottom: 15px;
     line-height: 30px
@@ -364,7 +364,7 @@ $theme: rgb(180, 59, 204);
     height: 25px;
     font-family: $font-temp;
     font-size: 27px;
-    background-color: #ee50b9;
+    background-color: $theme;
     border-radius: 60px;
     color: #fff;
     margin-right: 14px
@@ -476,7 +476,7 @@ $theme: rgb(180, 59, 204);
     width: 20px;
     border-radius: 50%;
     display: inline-block;
-    background: #ee50b9;
+    background: $theme;
 }
 
 .label_bold {
