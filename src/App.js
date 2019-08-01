@@ -33,7 +33,7 @@ class App extends Component {
 
       highestDegree: 'Graduation / Bachelors Degree or Equivilant',
 
-      docDegreeType: '',
+      docDegreeType: 'Full Time',
       docCollege: '',
       docBranch: '',
       docSpecilization: '',
@@ -43,7 +43,7 @@ class App extends Component {
       docMarks: '',
       docAchievement: '',
 
-      pgDegreeType: '',
+      pgDegreeType: 'Full Time',
       pgCollege: '',
       pgBranch: '',
       pgSpecilization: '',
@@ -53,7 +53,7 @@ class App extends Component {
       pgMarks: '',
       pgAchievement: '',
 
-      ugDegreeType: '',
+      ugDegreeType: 'Full Time',
       ugCollege: '',
       ugBranch: '',
       ugSpecilization: '',
@@ -81,8 +81,8 @@ class App extends Component {
       courseTimeMonth: '',
       courseTimeYear: '',
 
-      workingType: '',
-      workingDate: '',
+      workingType: 'Full Time',
+      workingDate: 'Immediately',
       workingMonth: '',
       workingYear: '',
       workingLocation: '',
@@ -425,7 +425,6 @@ class App extends Component {
   // }
 
   printResume() {
-    console.log("start of printResume");
     const qinput = document.querySelector("#print_content");
 
     html2canvas(qinput).then((canvas) => {
@@ -434,7 +433,7 @@ class App extends Component {
         pdf.addImage(imgData, 'JPEG', 0, 0);
         pdf.save("download.pdf");
     });
-    console.log("end of printResume");
+
 }
 
 

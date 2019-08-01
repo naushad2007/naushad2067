@@ -15,7 +15,7 @@ class Qualification extends Component {
                     <div>
                         <form>
                             <label>
-                            <input type="radio" name='radio1' className="docFullTime" value="Full Time" onChange={this.props.onValueChanged}/>Full Time
+                            <input type="radio" name='radio1' className="docFullTime" value="Full Time" onChange={this.props.onValueChanged} defaultChecked/>Full Time
                             </label>
                             <label>
                             <input type="radio" name='radio1' className="docPartTime" value="Part Time" onChange={this.props.onValueChanged}/>Part Time

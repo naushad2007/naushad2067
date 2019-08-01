@@ -13,7 +13,7 @@ class WorkPreference extends Component {
                     <label className="slabel">Specify your preference for:</label><br/>
                     <form className="job_preference in-line">
                         <label className="rb-container">
-                        <input type="radio" name="radio" id="wp_fulltime" className="wp_fulltime"  onChange={this.props.onValueChanged} value={this.props.workingType}/>FullTime
+                        <input type="radio" name="radio" id="wp_fulltime" className="wp_fulltime"  onChange={this.props.onValueChanged} value={this.props.workingType} defaultChecked/>FullTime
                         <span className="checkmark"></span>
                         </label>
                         <label className="rb-container">
@@ -30,7 +30,7 @@ class WorkPreference extends Component {
                     <label className="slabel">When can you start working?:</label><br/>
                     <form>
                         <label className="rb-container">
-                        <input type="radio" name="radio" className="wp_immediately" id="wp_immediately" value={this.props.workingDate} onChange={this.props.onValueChanged} value={this.props.workingDate}/>Immediately
+                        <input type="radio" name="radio" className="wp_immediately" id="wp_immediately" value={this.props.workingDate} onChange={this.props.onValueChanged} value={this.props.workingDate} defaultChecked/>Immediately
                         </label>
                         <label className="rb-container">
                         <input type="radio" name="radio" id="wp_provide_time" className="wp_provide_time" value={this.props.workingDates} onChange={this.props.onValueChanged} value={this.props.workingDate} />
