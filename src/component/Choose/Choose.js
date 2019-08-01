@@ -9,7 +9,7 @@ class Choose extends Component {
                 
                 <form>
                     <label className="label_width">
-                    <input type="radio" name='radio2' className="template1 nametemp move-little" value="1" onChange={this.props.onValueChanged}/>Blue Theme Template
+                    <input type="radio" name='radio2' className="template1 nametemp move-little" value="1" onChange={this.props.onValueChanged} defaultChecked/>Blue Theme Template
                     </label>
                     <br/>
                     <br/>

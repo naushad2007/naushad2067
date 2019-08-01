@@ -106,7 +106,7 @@ class App extends Component {
 
       nameQualification: '',
       nameClass: '',
-      template1isHidden: true,
+      template1isHidden: false,
       template2isHidden: true,
 
 
